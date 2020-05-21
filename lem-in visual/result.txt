@@ -1,0 +1,30 @@
+10
+##start
+A 0 0
+B 0 0
+C 0 0
+D 0 0
+E 0 0
+F 0 0
+G 0 0
+##end
+H 0 0
+A-D
+D-E
+E-G
+F-H
+G-H
+
+L1-D
+L1-E L2-D
+L1-G L2-E L3-D
+L1-H L2-G L3-E L4-D
+L2-H L3-G L4-E L5-D
+L3-H L4-G L5-E L6-D
+L4-H L5-G L6-E L7-D
+L5-H L6-G L7-E L8-D
+L6-H L7-G L8-E L9-D
+L7-H L8-G L9-E L10-D
+L8-H L9-G L10-E
+L9-H L10-G
+L10-H
