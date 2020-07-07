@@ -24,19 +24,41 @@ function Room(str, opt) {
     return this;
 }
 
+function checkPathForAnt(arr, number) {
+    let antsInStr = [];
+    let length = arr.length;
+    arr.forEach(function (part) {
+        let ant = part.split('-')[0];
+        antsInStr.push(ant);
+    })
+    return antsInStr.indexOf('L' + toString(number));
+}
+
 function Ant(number, info) {
     this.number = number;
     let path = [];
+
     info.forEach(function (str) {
         let splited = str.split(' ');
+        let indexOfThisAnt = checkPathForAnt(splited, number);
+        if(!indexOfThisAnt)
+        {
+            for (var i = 0; i < splited.length;i++)
+                path.push(null);
+        }
+        else
+        {
+            splited.forEach(function (part, index) {
+                let ant = part.split('-')[0];
+                let antNum =ant.slice(1);
+                let room= part.split('-')[1];
+                if (parseInt(antNum) === number)
+                    path.push(room);
+                else
+                    path.push(null);
+            })
+        }
 
-        splited.forEach(function (part) {
-            let ant = part.split('-')[0];
-            let antNum =ant.slice(1);
-            let room= part.split('-')[1];
-            if (parseInt(antNum) === number)
-                path.push(room);
-        })
     })
     this.path = path;
     return this;
@@ -103,7 +125,9 @@ function parseInfo(text)
                 opt ="start";
             else if(i === Indexes['end'])
                 opt = "end";
-            Rooms.push(new Room(splitted_info[i], opt));
+            let r = new Room(splitted_info[i], opt);
+            if ((r['name'][0] === '#' && opt) || r['name'][0] !== '#')
+                Rooms.push(r);
         }
 
     }
@@ -115,10 +139,10 @@ function parseInfo(text)
         ants.push(new Ant(i, splitted_info.slice(Indexes['solution'], splitted_info.length - 1)));
     }
     info['ants'] = ants;
-    console.log(info);
+  draw(info);
 }
 
-fetch('result.txt')
+fetch('maps/3-groups.map')
     .then(function (response) {
         return response.text();
     })
