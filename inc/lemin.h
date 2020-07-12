@@ -1,15 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   pushswap.h                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jslave <jslave@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/22 16:24:28 by jslave            #+#    #+#             */
-/*   Updated: 2020/03/16 16:24:44 by jslave           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+//
+// Created by janevermilion on 12.07.2020.
+//
 #ifndef LEMIN_H
 # define LEMIN_H
 # include "libft.h"
@@ -19,13 +10,61 @@
 # include <limits.h>
 # include <float.h>
 # include <fcntl.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <sys/stat.h>
 
-typedef struct			s_stk
+typedef struct		s_ant
 {
-	int					num;
-	struct s_stk		*head;
-	struct s_stk		*next;
-}						t_stk;
+    int 			index;
+    int 			curr_room;
+    struct s_ant	*next;
+}					t_ant;
 
+typedef struct		s_lem_in
+{
+    int 	*rooms;
+    t_ant	*ants;
+    char	**commands;
+    char 	**comments;
+    int 	cmd;
+    int 	cmt;
+    int 	count_of_ants;
+    int 	**matrix;
+}					t_lem_in;
+
+typedef struct		s_room
+{
+    int 			ant;
+    int				x;
+    int				y;
+    int 			name;
+    int 			*output;
+    int 			*input;
+    struct s_room	*next;
+}					t_room;
+
+/*
+ * errors.c
+ */
+void	RaiseError(int e);
+/*
+ * add_comment-room-ant.c
+ */
+void	add_comment(t_lem_in *lem_in, char *line, int i);
+void	add_command(t_lem_in *lem_in, char *line, int i);
+void	add_ant(t_lem_in *lem_in, char *line, int i);
+void	add_stroke(t_lem_in *lem_in);
+void	add_room(t_lem_in *lem_in, char **line, int i);
+/*
+ * parse-validity.c
+ */
+int 	ft_is_int(char *str);
+int		ft_strsplit_len(char **line);
+int 	is_room_name(char *line);
+int 	is_room(char **line);
+int 	is_command(char *line, int i);
+int 	is_comment(char *line, int i);
+int 	is_ants(char *line, int i);
 
 #endif

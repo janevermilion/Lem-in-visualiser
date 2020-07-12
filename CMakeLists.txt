@@ -102,4 +102,4 @@ add_executable(lemin
         libft/srcs/ft_tolower.c
         libft/srcs/ft_toupper.c
         libft/srcs/get_next_line.c
-        main.c)
+        main.c src/parse-validity.c src/add_comment-room-ant.c src/errors.c)
