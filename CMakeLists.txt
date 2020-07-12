@@ -1,13 +1,14 @@
 cmake_minimum_required(VERSION 3.16)
-project(super_funicular_lemin C)
+project(super_funicular_lemin_parse C)
 
 set(CMAKE_C_STANDARD 11)
 
 include_directories(inc)
 include_directories(libft/includes)
 
-add_executable(lemin
+add_executable(super_funicular_lemin_parse
         inc/lemin.h
+        lemin-visual/maps/shit.c
         libft/includes/ft_printf.h
         libft/includes/libft.h
         libft/src_printf/char_str_perc.c
@@ -102,4 +103,7 @@ add_executable(lemin
         libft/srcs/ft_tolower.c
         libft/srcs/ft_toupper.c
         libft/srcs/get_next_line.c
-        main.c src/parse-validity.c src/add_comment-room-ant.c src/errors.c)
+        src/add_comment-room-ant.c
+        src/errors.c
+        src/parse-validity.c
+        main.c)

@@ -1,6 +1,8 @@
 
 #include "lemin.h"
-
+#include <stdio.h>
+#include <conio.h>
+#include <iostream>
 
 t_lem_in	*ft_init_lem_in(void)
 {
@@ -21,8 +23,10 @@ t_lem_in	*ft_init_lem_in(void)
 }
 
 int main(int argc, char *argv[])
+
 {
 	int 		fd;
+    int 		fd1;
 	int fd2;
 	char		*line;
 	int 		i;
@@ -30,15 +34,14 @@ int main(int argc, char *argv[])
 	t_lem_in	*lem_in;
 
 /*
-	fd = open('test', O_RDONLY);//mac
-	printf("fd is: %i\n", fd);
+	fd1 = open("test.txt", O_RDONLY);//mac
+	printf("fd is: %i\n", fd1);
 */
 	i = 0;
 	lem_in = ft_init_lem_in();
 
-    char *filename = "test";
     mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
-    fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, mode);
+    fd = open("test.txt", O_WRONLY | O_CREAT | O_TRUNC, mode);
     printf("fd is: %i\n", fd);/////this is linux fd bitch
 
 
@@ -63,11 +66,32 @@ int main(int argc, char *argv[])
 		if (is_room(ft_strsplit(line, ' ')))
 		{
 			add_room(lem_in, ft_strsplit(line, " "), i);
-		}
+		}*/
 		i++;
-	     */
+
 	}
 	if(i == 0)
 	    printf("PROBLEM WITH GNL BITCH\n");//for jane
+
+    char st1[100];
+    char st2[100];
+//определяем указатель на файл
+    FILE *fin;
+// настриваем работу с Кириллицей
+    setlocale(LC_ALL, "Russian");
+// открываем файл на чтение
+    fin =  open("test.txt", O_WRONLY | O_CREAT | O_TRUNC, mode);
+// считываем первую строку из файла
+    if ( NULL != fgets ( st1, 100, fin ) )
+    {
+// выводим строку на экран
+        printf("%s ",st1);}
+// считываем вторую строку из файла
+    if ( NULL != fgets ( st2, 100, fin ) )
+    {
+// выводим строку на экран
+        printf("%s\n",st2);}
+// закрываем файл на чтение
+    fclose(fin);
 	return 0;
 }
