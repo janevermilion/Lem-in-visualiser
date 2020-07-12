@@ -81,8 +81,8 @@ int						get_next_line(int fd, char **line)
 	size_t			lenofsave;
 
 
-/*	if (fd < 0 || read(fd, buf, 0) < 0 || !line)
-		return (-1);*/
+	if (fd < 0 || read(fd, buf, 0) < 0 || !line)
+		return (-1);
 	save = find_fd(&startsave, fd);
 	while ((res = read(fd, buf, BUFF_SIZE)) > 0)
 	{

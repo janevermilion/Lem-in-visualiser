@@ -44,6 +44,16 @@ typedef struct		s_room
     struct s_room	*next;
 }					t_room;
 
+typedef struct      s_parser
+{
+    char *rooms;
+    int     quant_ants;
+    char *paths;
+    int index_of_paths_list_starting;
+
+
+}                   t_parser;
+
 /*
  * errors.c
  */

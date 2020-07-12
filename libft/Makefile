@@ -45,7 +45,7 @@ OUT_PRINTF = $(SRC_PRINTF:%.c=%.o)
 
 INCLUDES = includes
 
-FLAG = -Wall -Wextra -Werror
+FLAG =
 
 all: $(NAME)
 

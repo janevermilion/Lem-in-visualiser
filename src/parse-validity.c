@@ -66,3 +66,34 @@ int 	is_ants(char *line, int i)
         return (1);
     return (0);
 }
+
+t_lem_in    *check_validity_of_input_data(char **data, t_lem_in *lem_in)
+{
+    int i;
+    char *line;
+
+    i = 0;
+
+    while(data[i])
+    {
+        line = data[i];
+        if (is_comment(line, i))
+        {
+            add_comment(lem_in, line, i);
+        }
+        if (is_command(line, i))
+        {
+            add_command(lem_in, line, i);
+        }
+        if (is_ants(line, i))
+        {
+            add_ant(lem_in, line, i);
+        }
+        if (is_room(ft_strsplit(line, ' ')))
+        {
+            add_room(lem_in, ft_strsplit(line, " "), i);
+        }
+        i++;
+    }
+    return lem_in;
+}

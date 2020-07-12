@@ -20,9 +20,9 @@ LIBFT_INCLUDES = libft/includes
 
 INCLUDES = inc/
 
-FLAGS =  -Wall -Wextra -Werror
+FLAGS =
 
-SRC1 = src/********.c
+SRC1 = src/*.c *.c
 
 OUT1 = $(SRC1:%.c=%.o)
 
