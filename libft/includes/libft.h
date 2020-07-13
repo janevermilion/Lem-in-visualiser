@@ -111,5 +111,6 @@ char					*ft_itoa_long_long_uns(unsigned long long int n);
 char					*ft_itoa_long_long(long long int n);
 char					*ft_strreverse(char *str);
 int						ft_printf(const char *format, ...);
-
+int 	                ft_is_int(char *str);
+int                     ft_arraylen(void **array);
 #endif

@@ -44,16 +44,24 @@ typedef struct		s_room
     struct s_room	*next;
 }					t_room;
 
-typedef struct      s_parser
+typedef struct      s_parsed_room
 {
-    char *rooms;
-    int     quant_ants;
-    char *paths;
-    int index_of_paths_list_starting;
+    int ants;//quant of ants
+    int x;//coord x
+    int y;//coord y
+    char *name;//name of room
+    int type;//type -1 -error, type 1 start,type 2 normal,type3 end
+    char **conn;//array with all connections of this room
 
-
-}                   t_parser;
-
+}                   t_parsed_room;
+typedef struct s_main_indexes
+{
+    int start_room;
+    int end_room;
+    int paths;
+    int commented_lines;
+    int paths_count;
+}               t_main_indexes;
 /*
  * errors.c
  */
@@ -67,14 +75,18 @@ void	add_ant(t_lem_in *lem_in, char *line, int i);
 void	add_stroke(t_lem_in *lem_in);
 void	add_room(t_lem_in *lem_in, char **line, int i);
 /*
- * parse-validity.c
+ * parse-validity-utils.c
  */
-int 	ft_is_int(char *str);
-int		ft_strsplit_len(char **line);
-int 	is_room_name(char *line);
-int 	is_room(char **line);
-int 	is_command(char *line, int i);
-int 	is_comment(char *line, int i);
-int 	is_ants(char *line, int i);
+void check_connections_for_rooms(t_parsed_room **pRoom, char **data, t_main_indexes *indexes);
+t_parsed_room **memory_allocate_for_rooms_array(t_parsed_room **pRoom, int quantRooms);
+void create_connections_for_this_room(t_parsed_room *room, int j, char **data, int size);
+int if_all_coordinates_is_zero(t_parsed_room **pRoom);
+t_main_indexes *find_indexes(char **data, t_main_indexes *indexes);
+void print_rooms_array(t_parsed_room **pRoom);
+int this_room_is_appeared(char *room, t_parsed_room **rooms);
+/*
+ * parse-validity-main.c
+ */
+t_parsed_room    **check_validity_of_input_data(char **data);
 
 #endif
