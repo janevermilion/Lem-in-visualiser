@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 
     lines = 0;
     i = 0;
-	lem_in = ft_init_lem_in();
+
     line_result = ft_strnew(1);///free
 	while ((get_next_line(0,&line)) > 0)
 	{
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 	}
     char **array_for_validity_check = ft_strsplit(line_result,'*');
     ft_memdel((void **) &line_result);
-   while(array_for_validity_check[i])
+ /*  while(array_for_validity_check[i])
     {
         printf("%s\n", array_for_validity_check[i]);
         i++;
@@ -51,11 +51,15 @@ int main(int argc, char **argv)
    printf("\n");
     if(i!=lines)
         RaiseError(1);
-    else
+    else*/
         if(!(rooms_array = check_validity_of_input_data(array_for_validity_check)))
             RaiseError(2);
-    /*    else
-            if(!get_solution(lem_in, rooms_array))
+        else
+        {
+           // lem_in = ft_init_lem_in();
+            /*if(!get_solution(lem_in, rooms_array))
                 RaiseError(3);*/
+        }
+
     return 0;
 }

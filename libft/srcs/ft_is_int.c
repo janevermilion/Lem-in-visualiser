@@ -8,6 +8,7 @@ int 	ft_is_int(char *str)
 {
     int 	i;
 
+    i = 0;
     while (str[i])
     {
         if (!ft_isdigit(str[i]))

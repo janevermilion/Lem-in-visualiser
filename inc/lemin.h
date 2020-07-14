@@ -61,11 +61,14 @@ typedef struct s_main_indexes
     int paths;
     int commented_lines;
     int paths_count;
+    int ants;
+    int rooms;
 }               t_main_indexes;
 /*
  * errors.c
  */
 void	RaiseError(int e);
+void        parseError(int e, t_parsed_room **rooms, t_main_indexes *indexes, char **data);
 /*
  * add_comment-room-ant.c
  */

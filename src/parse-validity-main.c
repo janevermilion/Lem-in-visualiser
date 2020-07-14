@@ -3,44 +3,24 @@
 //
 #include "lemin.h"
 
-t_parsed_room   **check_validity_of_input_data(char **data)
+
+
+
+int   fill_rooms_name_and_coords(char **data, t_main_indexes *indexes, t_parsed_room **rooms_array)
 {
     int i;
-    char **splited_line;
-    int quant_ants;
-    t_parsed_room  **rooms_array;
-    t_main_indexes *indexes;
     int rooms_iter;
+    char **splited_line;
+    char *trimed;
 
     rooms_iter = 0;
-    indexes = find_indexes(data, indexes);
-    if(!indexes)
-    {
-        //freee
-        return NULL;
-    }
-    else
-    {
-        int len = ft_arraylen((void **)data) -1;
-        int test = len - indexes->commented_lines - indexes->paths_count;
-        if(!(rooms_array = memory_allocate_for_rooms_array(rooms_array, test)))
-            return NULL;
-    }
-    if(ft_is_int(data[0]) == 1)
-        quant_ants = ft_atoi(data[0]);
-    if(quant_ants <= 0)
-    {
-        //freee
-        return NULL;
-    }
-
     i = 1;
-
     while(i < indexes->paths && data[i])
     {
         if(data[i][0] != '#')
         {
-            char *trimed = ft_strtrim(data[i]);
+
+            trimed = ft_strtrim(data[i]);
             splited_line = ft_strsplit(trimed, ' ') ;
             //free trimed!!
             if(ft_arraylen((void **)splited_line) == 3)
@@ -49,7 +29,7 @@ t_parsed_room   **check_validity_of_input_data(char **data)
                 (rooms_array[rooms_iter])->name = ft_strdup(splited_line[0]);
                 (rooms_array[rooms_iter])->x = ft_atoi(splited_line[1]);
                 (rooms_array[rooms_iter])->y = ft_atoi(splited_line[2]);
-                (rooms_array[rooms_iter])->ants = quant_ants;
+                (rooms_array[rooms_iter])->ants = indexes->ants;
                 (rooms_array[rooms_iter])->type = 2;
 
                 if(i == indexes->start_room)
@@ -64,22 +44,35 @@ t_parsed_room   **check_validity_of_input_data(char **data)
                 rooms_iter++;
             }
             else
-            {
-                //freeeeee
-                return NULL;
-            }
-            //free splited line
+                parseError(2,rooms_array,indexes,data);
         }
         i++;
     }
+    return i;
+}
 
+t_main_indexes *find_indexes_to_parse(char **data, t_main_indexes *indexes)
+{
+    int quant_ants;
+
+    indexes = find_indexes(data, indexes);
+    if(!indexes)
+        parseError(1,NULL,indexes,data);
+    indexes->rooms = ft_arraylen((void **)data) -1 - indexes->commented_lines - indexes->paths_count;
+    if(!indexes->rooms)
+        parseError(9,NULL,indexes,data);
+    return indexes;
+}
+
+void   fill_connections_for_rooms(int i, t_parsed_room **rooms_array, char **data, t_main_indexes *indexes)
+{
     int j;
     while (data[i])
     {
         if(data[i][0] != '#')
         {
             char *trimed = ft_strtrim(data[i]);
-            splited_line = ft_strsplit(trimed, '-') ;
+            char **splited_line = ft_strsplit(trimed, '-');
             if(trimed && splited_line && splited_line[0])
             {
                 int ind;
@@ -111,20 +104,31 @@ t_parsed_room   **check_validity_of_input_data(char **data)
                     }
                 }
                 else if(ind == -1)
-                    return NULL;
+                    parseError(4, rooms_array,indexes, data);
 
             }
         }
         //free trimed!!
         i++;
     }
+}
 
+t_parsed_room   **check_validity_of_input_data(char **data)
+{
+    int i;
+    t_parsed_room  **rooms_array;
+    t_main_indexes *indexes;
+
+    indexes = find_indexes_to_parse(data,indexes);
+
+    if(!(rooms_array = memory_allocate_for_rooms_array(rooms_array, indexes->rooms)))
+        parseError(1, NULL,indexes,data);
+    i = fill_rooms_name_and_coords(data, indexes, rooms_array);
+    fill_connections_for_rooms(i,rooms_array,data,indexes);
     check_connections_for_rooms(rooms_array, data, indexes);
-    print_rooms_array(rooms_array);
     if(if_all_coordinates_is_zero(rooms_array) == 1)
-    {
-        //freee
-        return NULL;
-    }
+        parseError(3, rooms_array, indexes, data);
+    print_rooms_array(rooms_array);
+
     return rooms_array;
 }

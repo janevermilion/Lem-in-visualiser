@@ -5,20 +5,22 @@
 
 #include "lemin.h"
 
-
-
 t_main_indexes *find_indexes(char **data, t_main_indexes *indexes)
 {
     int i;
     if (!(indexes = (t_main_indexes *)ft_memalloc(sizeof(t_main_indexes))))
-        RaiseError(0);
+        parseError(1, NULL, indexes, data);
     i = 1;
     indexes->end_room = -1;
     indexes->start_room = -1;
     indexes->paths = -1;
     indexes->commented_lines = 0;
     indexes->paths_count = 0;
-
+    indexes->ants = 0;
+    if(ft_is_int(data[0]) == 1)
+        indexes->ants = ft_atoi(data[0]);
+    if(indexes->ants <= 0)
+        parseError(5, NULL, indexes, data);
     while(data[i])
     {
         if(ft_strstr(data[i], "-") != NULL && data[i][0] != '#')
@@ -37,20 +39,14 @@ t_main_indexes *find_indexes(char **data, t_main_indexes *indexes)
         if(ft_strcmp(data[i],"##start") == 0)
         {
             if(indexes->start_room != -1 || data[i+1] == NULL)
-            {
-                //free struct!!!
-                return NULL;
-            }
+                parseError(6, NULL, indexes, data);
             indexes->start_room = i+1;
             i++;
         }
         else if(ft_strcmp(data[i],"##end") == 0)
         {
             if(indexes->end_room != -1 || data[i+1] == NULL)
-            {
-                //free struct!!!
-                return NULL;
-            }
+                parseError(6, NULL, indexes, data);
             indexes->end_room = i+1;
             i++;
         }
@@ -58,21 +54,11 @@ t_main_indexes *find_indexes(char **data, t_main_indexes *indexes)
     }
 
     if(indexes->paths == -1 || indexes->start_room == -1 || indexes->end_room == -1)
-    {
-        //free
-        return NULL;
-    }
+        parseError(7, NULL, indexes, data);
     if(indexes->start_room >= indexes->paths || indexes->end_room >= indexes->paths)
-    {
-        ///freeee
-        return NULL;
-    }
+        parseError(8, NULL, indexes, data);
     return indexes;
 }
-
-
-
-
 
 
 void print_rooms_array(t_parsed_room **pRoom) {
@@ -146,10 +132,7 @@ t_parsed_room **memory_allocate_for_rooms_array(t_parsed_room **pRoom, int quant
     {
         pRoom[i] = (t_parsed_room *)ft_memalloc(sizeof(t_parsed_room));
         if(!pRoom[i])
-        {
-            //free other rooms
             return NULL;
-        }
         pRoom[i]->ants = -1;
         pRoom[i]->x = -1;
         pRoom[i]->y = -1;
