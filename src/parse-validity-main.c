@@ -5,13 +5,38 @@
 
 
 
+int   fill_room_by_line(char *data, t_parsed_room *room)
+{
+    char **splited_line;
+    char *trimed;
+    int err;
+
+    err = 1;
+    trimed = ft_strtrim(data);
+    splited_line = ft_strsplit(trimed, ' ') ;
+    if(ft_arraylen((void **)splited_line) == 3)
+    {
+        if(splited_line[0][0] == 'L')
+            err = -15;
+        else
+            room->name = ft_strdup(splited_line[0]);
+        room->x = ft_atoi_long_long(splited_line[1]);
+        room->y = ft_atoi_long_long(splited_line[2]);
+        if(room->x < 0 || room->y < 0 || room->x > INT_MAX || room->y > INT_MAX)
+            err = -2;
+    }
+    else
+        err = -2;
+    ft_memdel((void **)&trimed);
+    ft_free_2d_array((void **)splited_line);
+    return (err);
+}
 
 int   fill_rooms_name_and_coords(char **data, t_main_indexes *indexes, t_parsed_room **rooms_array)
 {
     int i;
     int rooms_iter;
-    char **splited_line;
-    char *trimed;
+    int err;
 
     rooms_iter = 0;
     i = 1;
@@ -19,108 +44,74 @@ int   fill_rooms_name_and_coords(char **data, t_main_indexes *indexes, t_parsed_
     {
         if(data[i][0] != '#')
         {
+            if((err = fill_room_by_line(data[i], rooms_array[rooms_iter])) < 0)
+                parseError((err * -1),rooms_array,indexes,data);
+            (rooms_array[rooms_iter])->ants = indexes->ants;
+            (rooms_array[rooms_iter])->type = 2;
 
-            trimed = ft_strtrim(data[i]);
-            splited_line = ft_strsplit(trimed, ' ') ;
-            //free trimed!!
-            if(ft_arraylen((void **)splited_line) == 3)
-            {
-
-                (rooms_array[rooms_iter])->name = ft_strdup(splited_line[0]);
-                (rooms_array[rooms_iter])->x = ft_atoi(splited_line[1]);
-                (rooms_array[rooms_iter])->y = ft_atoi(splited_line[2]);
-                (rooms_array[rooms_iter])->ants = indexes->ants;
-                (rooms_array[rooms_iter])->type = 2;
-
-                if(i == indexes->start_room)
-                {
-                    (rooms_array[rooms_iter])->type = 1;
-                }
-                else if(i == indexes->end_room)
-                {
-                    (rooms_array[rooms_iter])->type = 3;
-                }
-                t_parsed_room *test = rooms_array[rooms_iter];
-                rooms_iter++;
-            }
-            else
-                parseError(2,rooms_array,indexes,data);
+            if(i == indexes->start_room)
+                (rooms_array[rooms_iter])->type = 1;
+            else if(i == indexes->end_room)
+                (rooms_array[rooms_iter])->type = 3;
+            rooms_iter++;
         }
         i++;
     }
     return i;
 }
 
-t_main_indexes *find_indexes_to_parse(char **data, t_main_indexes *indexes)
-{
-    int quant_ants;
 
-    indexes = find_indexes(data, indexes);
-    if(!indexes)
-        parseError(1,NULL,indexes,data);
-    indexes->rooms = ft_arraylen((void **)data) -1 - indexes->commented_lines - indexes->paths_count;
-    if(!indexes->rooms)
-        parseError(9,NULL,indexes,data);
-    return indexes;
+void print_map_and_free_parse_structs(t_main_indexes *indexes, char **data)
+{
+
+    int i;
+
+    i = 0;
+    while (data && data[i])
+    {
+        printf("%s\n", data[i]);
+        i++;
+        if(i == ft_arraylen((void **)data))
+            printf("\n");
+    }
+    ft_free_2d_array((void **)data);
+    ft_memdel((void **)&indexes);
 }
 
-void   fill_connections_for_rooms(int i, t_parsed_room **rooms_array, char **data, t_main_indexes *indexes)
+
+int coordinates_is_repeated(t_parsed_room **rooms_array)
 {
+    int i;
     int j;
-    while (data[i])
+
+    i = 0;
+    while(rooms_array[i])
     {
-        if(data[i][0] != '#')
+        j = 0;
+        while (rooms_array[j])
         {
-            char *trimed = ft_strtrim(data[i]);
-            char **splited_line = ft_strsplit(trimed, '-');
-            if(trimed && splited_line && splited_line[0])
+            if(i != j)
             {
-                int ind;
-                j = indexes->paths;
-                if((ind = this_room_is_appeared(splited_line[0], rooms_array)) != -1 && ind != -5)
-                {
-                    if(ft_arraylen((void **)splited_line) == 2)
-                    {
-                        int needed_size = 0;
-
-                        while (data[j])
-                        {
-                            char *trimed2 = ft_strtrim(data[j]);
-                            char **splited_line2 = ft_strsplit(trimed2, '-');
-                            //free trimed!!
-                            if(trimed2 && splited_line2[0] && splited_line2[1])
-                            {
-                                if(ft_strcmp(splited_line2[1], splited_line[0]) == 0)
-                                    needed_size++;
-                                else if(ft_strcmp(splited_line2[0], splited_line[0]) == 0)
-                                    needed_size++;
-                            }
-                            j++;
-
-                        }
-                        if(needed_size)
-                            create_connections_for_this_room(rooms_array[ind], indexes->paths, data, needed_size);
-
-                    }
-                }
-                else if(ind == -1)
-                    parseError(4, rooms_array,indexes, data);
-
+                if(rooms_array[i]->x == rooms_array[j]->x && rooms_array[i]->y == rooms_array[j]->y)
+                    return (1);
             }
+            j++;
         }
-        //free trimed!!
         i++;
     }
+    return 0;
 }
 
-t_parsed_room   **check_validity_of_input_data(char **data)
+
+t_parsed_room   **check_validity_of_input_data(char **data, int lines)
 {
     int i;
     t_parsed_room  **rooms_array;
     t_main_indexes *indexes;
 
+    if(ft_arraylen((void **)data) != lines)
+        parseError(11, NULL, NULL, data);
     indexes = find_indexes_to_parse(data,indexes);
-
     if(!(rooms_array = memory_allocate_for_rooms_array(rooms_array, indexes->rooms)))
         parseError(1, NULL,indexes,data);
     i = fill_rooms_name_and_coords(data, indexes, rooms_array);
@@ -128,7 +119,9 @@ t_parsed_room   **check_validity_of_input_data(char **data)
     check_connections_for_rooms(rooms_array, data, indexes);
     if(if_all_coordinates_is_zero(rooms_array) == 1)
         parseError(3, rooms_array, indexes, data);
-    print_rooms_array(rooms_array);
-
+    if(coordinates_is_repeated(rooms_array))
+        parseError(13, rooms_array, indexes, data);
+    print_map_and_free_parse_structs(indexes, data);
+    print_rooms_array(rooms_array);//delete later
     return rooms_array;
 }

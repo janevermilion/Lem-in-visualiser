@@ -67,29 +67,39 @@ typedef struct s_main_indexes
 /*
  * errors.c
  */
+void        free_parseStructures(t_parsed_room **rooms, t_main_indexes *indexes, char **data);
 void	RaiseError(int e);
 void        parseError(int e, t_parsed_room **rooms, t_main_indexes *indexes, char **data);
-/*
- * add_comment-room-ant.c
- */
-void	add_comment(t_lem_in *lem_in, char *line, int i);
-void	add_command(t_lem_in *lem_in, char *line, int i);
-void	add_ant(t_lem_in *lem_in, char *line, int i);
-void	add_stroke(t_lem_in *lem_in);
-void	add_room(t_lem_in *lem_in, char **line, int i);
+
 /*
  * parse-validity-utils.c
  */
-void check_connections_for_rooms(t_parsed_room **pRoom, char **data, t_main_indexes *indexes);
+
 t_parsed_room **memory_allocate_for_rooms_array(t_parsed_room **pRoom, int quantRooms);
-void create_connections_for_this_room(t_parsed_room *room, int j, char **data, int size);
+
 int if_all_coordinates_is_zero(t_parsed_room **pRoom);
-t_main_indexes *find_indexes(char **data, t_main_indexes *indexes);
+
 void print_rooms_array(t_parsed_room **pRoom);
 int this_room_is_appeared(char *room, t_parsed_room **rooms);
 /*
  * parse-validity-main.c
  */
-t_parsed_room    **check_validity_of_input_data(char **data);
+t_parsed_room    **check_validity_of_input_data(char **data, int lines);
+void print_map_and_free_parse_structs(t_main_indexes *indexes, char **data);
+int coordinates_is_repeated(t_parsed_room **rooms_array);
+
+int   fill_rooms_name_and_coords(char **data, t_main_indexes *indexes, t_parsed_room **rooms_array);
+/*
+ * parse-validity-indexes.c
+ */
+t_main_indexes *find_indexes(char **data, t_main_indexes *indexes);
+t_main_indexes *find_indexes_to_parse(char **data, t_main_indexes *indexes);
+
+/*
+ * parse-validity-connections.c
+ */
+void check_connections_for_rooms(t_parsed_room **pRoom, char **data, t_main_indexes *indexes);
+void create_connections_for_this_room(t_parsed_room *room, int j, char **data, int size);
+void   fill_connections_for_rooms(int i, t_parsed_room **rooms_array, char **data, t_main_indexes *indexes);
 
 #endif

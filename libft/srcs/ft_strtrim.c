@@ -64,3 +64,33 @@ char				*ft_strtrim(const char *s)
 	}
 	return (res);
 }
+
+char				*ft_strtrim_free_arg_string(const char *s)
+{
+	char		*res;
+	size_t		sp;
+	size_t		i;
+
+	i = 0;
+	res = NULL;
+	if (s)
+	{
+		if ((sp = qual_of_spaces((char *)s)) == ft_strlen((char *)s))
+			return (ft_strnew(0));
+		if (ft_strlen((char *)s) - (sp + 1) != 0)
+			if ((res = ft_strnew(ft_strlen((char *)s) - sp)))
+			{
+				sp = ft_strlen((char *)s) - sp;
+				while (*s == ' ' || *s == '\n' || *s == '\t')
+					s++;
+				while (*s != '\0' && sp > 0)
+				{
+					res[i++] = (char)(*s);
+					s++;
+					sp--;
+				}
+			}
+		ft_memdel((void **)&s);
+	}
+	return (res);
+}

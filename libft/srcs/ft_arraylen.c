@@ -8,6 +8,9 @@ int         ft_arraylen(void **array)
 {
     int i;
     i = 0;
+
+    if(!array)
+        return -1;
     while (array[i])
     {
         char *test = array[i];

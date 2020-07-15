@@ -103,7 +103,6 @@ add_executable(super_funicular_lemin_parse
         libft/srcs/ft_tolower.c
         libft/srcs/ft_toupper.c
         libft/srcs/get_next_line.c
-        src/add_comment-room-ant.c
         src/errors.c
         src/parse-validity-utils.c
-        main.c libft/srcs/ft_is_int.c libft/srcs/ft_arraylen.c src/parse-validity-main.c)
+        main.c libft/srcs/ft_is_int.c libft/srcs/ft_arraylen.c src/parse-validity-main.c libft/srcs/ft_free_2d_array.c src/parse-validity-indexes.c src/parse-validity-connections.c src/temp.c)

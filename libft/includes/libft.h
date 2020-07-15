@@ -72,6 +72,7 @@ char					*ft_strsub(char const *s, unsigned int start, size_t
 len);
 char					*ft_strjoin(char const *s1, char const *s2);
 char					*ft_strtrim(char const *s);
+char				    *ft_strtrim_free_arg_string(const char *s);
 char					**ft_strsplit(char const *s, char c);
 void					memfree(char **str, int len);
 char					*ft_itoa(int n);
@@ -113,4 +114,5 @@ char					*ft_strreverse(char *str);
 int						ft_printf(const char *format, ...);
 int 	                ft_is_int(char *str);
 int                     ft_arraylen(void **array);
+void 					ft_free_2d_array(void **array);
 #endif
