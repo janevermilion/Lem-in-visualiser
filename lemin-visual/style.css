@@ -4,10 +4,23 @@
     height: 768px;
     padding: 50px 0;
     margin: 0 auto;
-    background-color: #96e0c6;
+    margin-top: 50px;
+  /*  background-color: rgba(30, 224, 9, 0.16);*/
     position: relative;
 }
-.start
+.buttons-container
+{
+    z-index: 30;
+    position: absolute;
+    top: -45px;
+    left: 20px;
+    min-width: 300px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.button
 {
     padding: 10px 20px;
     margin: 0 auto;
@@ -17,11 +30,9 @@
     font-family: Broadway, sans-serif;
     color: whitesmoke;
     border: none;
-    z-index: 30;
-    position: absolute;
-    bottom: 50px;
-    left: 20px;
+
 }
+
 .room
 {
 
@@ -38,3 +49,4 @@
     height: 100px;*/
     background-color: red;
 }
+

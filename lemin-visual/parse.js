@@ -111,7 +111,8 @@ function findMainIndexes(arr) {
 
 function parseInfo(text)
 {
-    let splitted_info = text.split('\r\n');
+   // let splitted_info = text.split('\r\n');//for Win
+    let splitted_info = text.split('\n');//for linux
     let Indexes =findMainIndexes(splitted_info);
     let info = [];
     info['quant_of_ants'] = splitted_info[0];
@@ -142,7 +143,7 @@ function parseInfo(text)
   draw(info);
 }
 
-fetch('maps/3-groups.map')
+fetch('result3')
     .then(function (response) {
         return response.text();
     })

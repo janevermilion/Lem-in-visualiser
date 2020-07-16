@@ -8,9 +8,24 @@
 </head>
 <body>
 <div class="lemin-container">
-    <button id="start-button" class="start">start</button>
+    <div class="buttons-container">
+        <button id="start-button" class="button">start</button>
+        <button id="pause-button" class="button">pause</button>
+        <button id="restart-button" class="button">restart</button>
+        <button id="scale-mapp" class="button">scale + </button>
+        <button id="scale-mapm" class="button">scale - </button>
+        <button id="speedp" class="button">speed +</button>
+        <button id="speedm" class="button">speed - </button>
+    </div>
 </div>
-
+<div class="info_about">
+    <p>Info about map:</p>
+        <p id="quant_ants"></p>
+        <p id="rooms-list"></p>
+        <p id="rooms-connections"></p>
+        <p id="ants-paths"></p>
+</div>
+<script type="text/javascript" src="utils.js"></script>
 <script type="text/javascript" src="draw.js"></script>
 <script type="text/javascript" src="parse.js"></script>
 
