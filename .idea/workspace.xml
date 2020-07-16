@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="super_funicular_lemin_parse" targetName="super_funicular_lemin_parse" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1ca8c2cd-f6f3-46da-8ffa-c9080484206a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1eZyywBl10XOhcHPLAhzkS2bSc0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/test.txt" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="super_funicular_lemin_parse" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$FilePrompt$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="super_funicular_lemin_parse" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="super_funicular_lemin_parse">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ca8c2cd-f6f3-46da-8ffa-c9080484206a" name="Default Changelist" comment="" />
+      <created>1594543668408</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594543668408</updated>
+      <workItem from="1594543678842" duration="2696000" />
+      <workItem from="1594546465621" duration="5257000" />
+      <workItem from="1594555659009" duration="8617000" />
+      <workItem from="1594628143338" duration="11045000" />
+      <workItem from="1594639691376" duration="1374000" />
+      <workItem from="1594643626046" duration="6606000" />
+      <workItem from="1594658138655" duration="5636000" />
+      <workItem from="1594721636146" duration="8438000" />
+      <workItem from="1594748346842" duration="7080000" />
+      <workItem from="1594803012592" duration="21929000" />
+    </task>
+    <task id="LOCAL-00001" summary="fopen and gnl not working T_T">
+      <created>1594551704893</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1594551704893</updated>
+    </task>
+    <task id="LOCAL-00002" summary="parser is alive">
+      <created>1594664643286</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1594664643286</updated>
+    </task>
+    <task id="LOCAL-00003" summary="save commit.start to separate functions for norminette.start freeing the memory leaks">
+      <created>1594730524706</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1594730524707</updated>
+    </task>
+    <task id="LOCAL-00004" summary="end freeing memory leaks/start norminette">
+      <created>1594826936797</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1594826936797</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fopen and gnl not working T_T" />
+    <MESSAGE value="parser is alive" />
+    <MESSAGE value="save commit.start to separate functions for norminette.start freeing the memory leaks" />
+    <MESSAGE value="end freeing memory leaks/start norminette" />
+    <option name="LAST_COMMIT_MESSAGE" value="end freeing memory leaks/start norminette" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594664474581">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594664474581" />
+    <state x="714" y="324" width="481" height="385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594545906115">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="714" y="324" width="481" height="385" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594545906115" />
+    <state x="724" y="230" width="424" height="579" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1594560197712">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="724" y="230" width="424" height="579" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594560197712" />
+    <state x="538" y="71" width="817" height="848" key="CommitChangelistDialog2" timestamp="1594826936053">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="538" y="71" width="817" height="848" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594826936053" />
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1594826998738">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594826998738" />
+    <state width="1878" height="268" key="GridCell.Tab.0.bottom" timestamp="1594827012023">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012023" />
+    <state width="1878" height="268" key="GridCell.Tab.0.center" timestamp="1594827012022">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012022" />
+    <state width="1878" height="268" key="GridCell.Tab.0.left" timestamp="1594827012022">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012022" />
+    <state width="1878" height="268" key="GridCell.Tab.0.right" timestamp="1594827012023">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012023" />
+    <state width="1878" height="268" key="GridCell.Tab.1.bottom" timestamp="1594827012024">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="268" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012024" />
+    <state width="1878" height="268" key="GridCell.Tab.1.center" timestamp="1594827012023">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="268" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012023" />
+    <state width="1878" height="268" key="GridCell.Tab.1.left" timestamp="1594827012023">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="268" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012023" />
+    <state width="1878" height="268" key="GridCell.Tab.1.right" timestamp="1594827012024">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="268" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012024" />
+    <state x="464" y="154" key="SettingsEditor" timestamp="1594826828434">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="464" y="154" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594826828434" />
+    <state x="547" y="233" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1594826949283">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="547" y="233" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594826949283" />
+    <state x="750" y="414" width="393" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594555668550">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="750" y="414" width="393" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594555668550" />
+    <state x="756" y="533" width="546" height="420" key="refactoring.ChangeSignatureDialog" timestamp="1594820980697">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="756" y="533" width="546" height="420" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594820980697" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/parse-validity-main.c</url>
+          <line>76</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/errors.c</url>
+          <line>86</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
