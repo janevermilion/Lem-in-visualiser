@@ -143,7 +143,7 @@ function parseInfo(text)
   draw(info);
 }
 
-fetch('result3')
+fetch('result.txt')
     .then(function (response) {
         return response.text();
     })

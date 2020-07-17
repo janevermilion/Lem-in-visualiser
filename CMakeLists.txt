@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.16)
-project(super_funicular_lemin_parse C)
+project(super_funicular_lemin C)
 
 set(CMAKE_C_STANDARD 11)
 
 include_directories(inc)
 include_directories(libft/includes)
 
-add_executable(super_funicular_lemin_parse
+add_executable(super_funicular_lemin
         inc/lemin.h
         lemin-visual/maps/shit.c
         libft/includes/ft_printf.h
@@ -32,12 +32,15 @@ add_executable(super_funicular_lemin_parse
         libft/src_printf/unsigned_2.c
         libft/src_printf/utils.c
         libft/srcs/find_len_of_num.c
+        libft/srcs/ft_arraylen.c
         libft/srcs/ft_atoi.c
         libft/srcs/ft_atoi_base.c
         libft/srcs/ft_atoi_long_long.c
         libft/srcs/ft_bzero.c
         libft/srcs/ft_count_if.c
         libft/srcs/ft_foreach.c
+        libft/srcs/ft_free_2d_array.c
+        libft/srcs/ft_is_int.c
         libft/srcs/ft_isalnum.c
         libft/srcs/ft_isalpha.c
         libft/srcs/ft_isascii.c
@@ -104,5 +107,9 @@ add_executable(super_funicular_lemin_parse
         libft/srcs/ft_toupper.c
         libft/srcs/get_next_line.c
         src/errors.c
+        src/parse-validity-connections.c
+        src/parse-validity-connections_2.c
+        src/parse-validity-indexes.c
+        src/parse-validity-main.c
         src/parse-validity-utils.c
-        main.c libft/srcs/ft_is_int.c libft/srcs/ft_arraylen.c src/parse-validity-main.c libft/srcs/ft_free_2d_array.c src/parse-validity-indexes.c src/parse-validity-connections.c src/temp.c)
+        main.c)

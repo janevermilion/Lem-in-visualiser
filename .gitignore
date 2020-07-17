@@ -1,2 +1,4 @@
 /cmake-build-debug/
 /*/*.o
+/lemin-visual/node_modules/
+/lemin-visual/.idea/

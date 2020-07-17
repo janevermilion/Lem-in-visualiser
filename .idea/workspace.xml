@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="super_funicular_lemin_parse" targetName="super_funicular_lemin_parse" />
+      <config projectName="super_funicular_lemin" targetName="super_funicular_lemin" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -11,7 +11,31 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ca8c2cd-f6f3-46da-8ffa-c9080484206a" name="Default Changelist" comment="" />
+    <list default="true" id="1ca8c2cd-f6f3-46da-8ffa-c9080484206a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/super-funicular-lemin-parse.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/super_funicular_lemin.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lemin-visual/visualiser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parse-validity-connections_2.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/lemin.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/lemin.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/lemin-visual/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parse-validity-connections.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-connections.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parse-validity-indexes.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-indexes.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parse-validity-main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parse-validity-utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/temp.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/test.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +44,13 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -35,24 +65,39 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test.txt" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lemin-visual/public" />
+      <recent name="$PROJECT_DIR$/lemin-visual" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="super_funicular_lemin_parse" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$FilePrompt$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="super_funicular_lemin_parse" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="super_funicular_lemin_parse">
+  <component name="RunManager" selected="CMake Application.super_funicular_lemin">
+    <configuration name="super_funicular_lemin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$FilePrompt$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="super_funicular_lemin" TARGET_NAME="super_funicular_lemin" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="super_funicular_lemin" RUN_TARGET_NAME="super_funicular_lemin">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="super_funicular_lemin_parse" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$FilePrompt$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="super_funicular_lemin" TARGET_NAME="super_funicular_lemin_parse" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="super_funicular_lemin" RUN_TARGET_NAME="super_funicular_lemin_parse">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.super_funicular_lemin_parse" />
+      <item itemvalue="CMake Application.super_funicular_lemin" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -74,6 +119,11 @@
       <workItem from="1594721636146" duration="8438000" />
       <workItem from="1594748346842" duration="7080000" />
       <workItem from="1594803012592" duration="21929000" />
+      <workItem from="1594904875406" duration="304000" />
+      <workItem from="1594926015079" duration="326000" />
+      <workItem from="1594926349901" duration="484000" />
+      <workItem from="1594926837883" duration="2997000" />
+      <workItem from="1594982080087" duration="3274000" />
     </task>
     <task id="LOCAL-00001" summary="fopen and gnl not working T_T">
       <created>1594551704893</created>
@@ -103,7 +153,21 @@
       <option name="project" value="LOCAL" />
       <updated>1594826936797</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="update visualiser">
+      <created>1594904928080</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1594904928080</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Merge branch 'master' of https://github.com/janevermilion/super-funicular-lemin&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml">
+      <created>1594926622769</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1594926622769</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,45 +178,52 @@
     <MESSAGE value="parser is alive" />
     <MESSAGE value="save commit.start to separate functions for norminette.start freeing the memory leaks" />
     <MESSAGE value="end freeing memory leaks/start norminette" />
-    <option name="LAST_COMMIT_MESSAGE" value="end freeing memory leaks/start norminette" />
+    <MESSAGE value="update visualiser" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/janevermilion/super-funicular-lemin&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml" />
+    <MESSAGE value="adding node server" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding node server" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594664474581">
+    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594926915285">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594664474581" />
-    <state x="714" y="324" width="481" height="385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594545906115">
+    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594926915285" />
+    <state x="714" y="324" width="494" height="385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594984848985">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="714" y="324" width="481" height="385" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594545906115" />
-    <state x="724" y="230" width="424" height="579" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1594560197712">
+    <state x="714" y="324" width="494" height="385" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1594984848985" />
+    <state x="724" y="230" width="424" height="579" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1594926377690">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="724" y="230" width="424" height="579" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594560197712" />
-    <state x="538" y="71" width="817" height="848" key="CommitChangelistDialog2" timestamp="1594826936053">
+    <state x="724" y="230" width="424" height="579" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594926377690" />
+    <state x="538" y="71" width="817" height="848" key="CommitChangelistDialog2" timestamp="1594926622216">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="538" y="71" width="817" height="848" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594826936053" />
-    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1594826998738">
+    <state x="538" y="71" width="817" height="848" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1594926622216" />
+    <state x="100" y="99" width="1720" height="840" key="DiffContextDialog" timestamp="1594926740600">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594826998738" />
-    <state width="1878" height="268" key="GridCell.Tab.0.bottom" timestamp="1594827012023">
+    <state x="100" y="99" width="1720" height="840" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594926740600" />
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1594928493421">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="268" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012023" />
-    <state width="1878" height="268" key="GridCell.Tab.0.center" timestamp="1594827012022">
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1594928493421" />
+    <state width="1318" height="255" key="GridCell.Tab.0.bottom" timestamp="1594930551583">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="268" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012022" />
-    <state width="1878" height="268" key="GridCell.Tab.0.left" timestamp="1594827012022">
+    <state width="1318" height="255" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594930551583" />
+    <state width="1318" height="255" key="GridCell.Tab.0.center" timestamp="1594930551575">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="268" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012022" />
-    <state width="1878" height="268" key="GridCell.Tab.0.right" timestamp="1594827012023">
+    <state width="1318" height="255" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594930551575" />
+    <state width="1318" height="255" key="GridCell.Tab.0.left" timestamp="1594930551562">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="268" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012023" />
+    <state width="1318" height="255" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594930551562" />
+    <state width="1318" height="255" key="GridCell.Tab.0.right" timestamp="1594930551577">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1318" height="255" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594930551577" />
     <state width="1878" height="268" key="GridCell.Tab.1.bottom" timestamp="1594827012024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -169,14 +240,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1878" height="268" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594827012024" />
-    <state x="464" y="154" key="SettingsEditor" timestamp="1594826828434">
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1594926834669">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="464" y="154" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594826828434" />
-    <state x="547" y="233" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1594826949283">
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1594926834669" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1594926834668">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="547" y="233" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594826949283" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1594926834668" />
+    <state x="597" y="283" width="715" height="466" key="MultipleFileMergeDialog" timestamp="1594926598121">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="597" y="283" width="715" height="466" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594926598121" />
+    <state x="891" y="73" key="SettingsEditor" timestamp="1594927174497">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="891" y="73" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594927174497" />
+    <state x="547" y="233" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1594926635657">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="547" y="233" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1594926635657" />
     <state x="750" y="414" width="393" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594555668550">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -191,12 +274,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/parse-validity-main.c</url>
-          <line>76</line>
+          <line>84</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/errors.c</url>
-          <line>86</line>
+          <line>89</line>
           <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>

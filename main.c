@@ -1,7 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jslave <jslave@student.21-school.ru>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/07/15 18:59:35 by jslave            #+#    #+#             */
+/*   Updated: 2020/07/15 18:59:35 by jslave           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "lemin.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 t_lem_in	*ft_init_lem_in(void)
 {
@@ -41,7 +50,6 @@ int main(int argc, char **argv)
     char **array_for_validity_check = ft_strsplit(line_result,'\n');
     ft_memdel((void **) &line_result);
     rooms_array = check_validity_of_input_data(array_for_validity_check, lines);
-    free_parseStructures(rooms_array, NULL,NULL);////delete only fol valgrind
     // lem_in = ft_init_lem_in();
     //if(!get_solution(lem_in, rooms_array))
     //    RaiseError(3);

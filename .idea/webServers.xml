@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4511bd75-a188-41fe-89c2-4f3fdc9d9590" name="lemin-server" url="http://localhost">
+        <fileTransfer mountedRoot="$PROJECT_DIR$/lemin-visual" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
