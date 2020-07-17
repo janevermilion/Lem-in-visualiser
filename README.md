@@ -19,4 +19,4 @@
 <h6>Напоминалки для jterrell:</h5>
   -git checkout -b jterrell и работать в ней и пушить в нее<br>
    
-З.Ы. ./lem-in < map.map > result.txt
+З.Ы.полная команда ./lem-in < map.map > result.txt 
