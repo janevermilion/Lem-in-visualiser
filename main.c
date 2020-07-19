@@ -50,6 +50,7 @@ int main(int argc, char **argv)
     char **array_for_validity_check = ft_strsplit(line_result,'\n');
     ft_memdel((void **) &line_result);
     rooms_array = check_validity_of_input_data(array_for_validity_check, lines);
+    free_parseStructures(rooms_array, NULL, NULL);//DELETE later but freee rooms by this func only
     // lem_in = ft_init_lem_in();
     //if(!get_solution(lem_in, rooms_array))
     //    RaiseError(3);
