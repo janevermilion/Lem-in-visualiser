@@ -29,6 +29,7 @@
     color: whitesmoke;
     border: none;
     margin: 5px;
+    cursor: pointer;
 }
 
 .room

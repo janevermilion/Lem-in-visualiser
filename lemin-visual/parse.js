@@ -147,7 +147,7 @@ function parseInfo(text)
     draw(info);
 }
 
-
+/*
 (async () => {
     await fetch('result.txt')
         .then(function (response) {
@@ -170,5 +170,4 @@ function parseInfo(text)
             document.querySelector('.buttons-container').style.display = 'none';
         })
 })();
-
-
+*/

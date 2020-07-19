@@ -20,7 +20,7 @@
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="super_funicular_lemin_parse" targetName="super_funicular_lemin_parse" />
+      <config projectName="super_funicular_lemin_parse" targetName="super_funicular_lemin" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -30,16 +30,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ca8c2cd-f6f3-46da-8ffa-c9080484206a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lemin-visual/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inc/lemin.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/lemin.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/errors.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parse-validity-connections.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parse-validity-connections_2.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parse-validity-indexes.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-indexes.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parse-validity-main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parse-validity-utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-utils.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/lemin-visual/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/lemin-visual/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/lemin-visual/parse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/lemin-visual/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/visualiser.js" beforeDir="false" afterPath="$PROJECT_DIR$/lemin-visual/visualiser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,13 +86,8 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.super_funicular_lemin">
+  <component name="RunManager" selected="JavaScript Debug.Unnamed">
     <configuration name="super_funicular_lemin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$FilePrompt$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="super_funicular_lemin_parse" TARGET_NAME="super_funicular_lemin" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="super_funicular_lemin_parse" RUN_TARGET_NAME="super_funicular_lemin">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="super_funicular_lemin_parse" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="super_funicular_lemin_parse" TARGET_NAME="super_funicular_lemin_parse" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="super_funicular_lemin_parse" RUN_TARGET_NAME="super_funicular_lemin_parse">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -104,7 +97,6 @@
     </configuration>
     <list>
       <item itemvalue="CMake Application.super_funicular_lemin" />
-      <item itemvalue="CMake Application.super_funicular_lemin_parse" />
       <item itemvalue="JavaScript Debug.Unnamed" />
     </list>
   </component>
@@ -254,58 +246,58 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="100" y="99" width="1720" height="840" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595148564663" />
-    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1595172760914">
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1595177162989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595172760914" />
-    <state width="1860" height="272" key="GridCell.Tab.0.bottom" timestamp="1595160671391">
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595177162989" />
+    <state width="1878" height="434" key="GridCell.Tab.0.bottom" timestamp="1595179854484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595160671391" />
-    <state width="1860" height="272" key="GridCell.Tab.0.center" timestamp="1595160671391">
+    <state width="1878" height="434" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854484" />
+    <state width="1878" height="434" key="GridCell.Tab.0.center" timestamp="1595179854482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="272" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595160671391" />
-    <state width="1860" height="272" key="GridCell.Tab.0.left" timestamp="1595160671390">
+    <state width="1878" height="434" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854482" />
+    <state width="1878" height="434" key="GridCell.Tab.0.left" timestamp="1595179854481">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="272" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595160671390" />
-    <state width="1860" height="272" key="GridCell.Tab.0.right" timestamp="1595160671391">
+    <state width="1878" height="434" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854481" />
+    <state width="1878" height="434" key="GridCell.Tab.0.right" timestamp="1595179854483">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="272" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595160671391" />
-    <state width="1878" height="123" key="GridCell.Tab.1.bottom" timestamp="1595169142529">
+    <state width="1878" height="434" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854483" />
+    <state width="1878" height="434" key="GridCell.Tab.1.bottom" timestamp="1595179854486">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595169142529" />
-    <state width="1878" height="123" key="GridCell.Tab.1.center" timestamp="1595169142528">
+    <state width="1878" height="434" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854486" />
+    <state width="1878" height="434" key="GridCell.Tab.1.center" timestamp="1595179854485">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595169142528" />
-    <state width="1878" height="123" key="GridCell.Tab.1.left" timestamp="1595169142528">
+    <state width="1878" height="434" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854485" />
+    <state width="1878" height="434" key="GridCell.Tab.1.left" timestamp="1595179854484">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595169142528" />
-    <state width="1878" height="123" key="GridCell.Tab.1.right" timestamp="1595169142529">
+    <state width="1878" height="434" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854484" />
+    <state width="1878" height="434" key="GridCell.Tab.1.right" timestamp="1595179854485">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595169142529" />
-    <state width="1878" height="434" key="GridCell.Tab.2.bottom" timestamp="1595164247176">
+    <state width="1878" height="434" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854485" />
+    <state width="1878" height="434" key="GridCell.Tab.2.bottom" timestamp="1595179854488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="434" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595164247176" />
-    <state width="1878" height="434" key="GridCell.Tab.2.center" timestamp="1595164247175">
+    <state width="1878" height="434" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854488" />
+    <state width="1878" height="434" key="GridCell.Tab.2.center" timestamp="1595179854487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="434" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595164247175" />
-    <state width="1878" height="434" key="GridCell.Tab.2.left" timestamp="1595164247175">
+    <state width="1878" height="434" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854487" />
+    <state width="1878" height="434" key="GridCell.Tab.2.left" timestamp="1595179854487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="434" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595164247175" />
-    <state width="1878" height="434" key="GridCell.Tab.2.right" timestamp="1595164247176">
+    <state width="1878" height="434" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854487" />
+    <state width="1878" height="434" key="GridCell.Tab.2.right" timestamp="1595179854488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="434" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595164247176" />
+    <state width="1878" height="434" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595179854488" />
     <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1595172766413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -347,14 +339,21 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/parse-validity-main.c</url>
-          <line>84</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/errors.c</url>
-          <line>91</line>
+          <line>93</line>
           <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/lemin-visual/test.js</url>
+          <line>3</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/lemin-visual/visualiser.js</url>
+          <line>15</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="59" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
