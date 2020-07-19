@@ -20,7 +20,7 @@
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="super_funicular_lemin" targetName="super_funicular_lemin" />
+      <config projectName="super_funicular_lemin_parse" targetName="super_funicular_lemin_parse" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -31,10 +31,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1ca8c2cd-f6f3-46da-8ffa-c9080484206a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inc/lemin.h" beforeDir="false" afterPath="$PROJECT_DIR$/inc/lemin.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parse-validity-connections.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-connections.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parse-validity-connections_2.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-connections_2.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/errors.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/errors.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parse-validity-connections.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parse-validity-connections_2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parse-validity-indexes.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-indexes.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parse-validity-main.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parse-validity-utils.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-utils.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +49,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -85,7 +89,12 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.super_funicular_lemin">
-    <configuration name="super_funicular_lemin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$FilePrompt$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="super_funicular_lemin" TARGET_NAME="super_funicular_lemin" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="super_funicular_lemin" RUN_TARGET_NAME="super_funicular_lemin">
+    <configuration name="super_funicular_lemin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$FilePrompt$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="super_funicular_lemin_parse" TARGET_NAME="super_funicular_lemin" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="super_funicular_lemin_parse" RUN_TARGET_NAME="super_funicular_lemin">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="super_funicular_lemin_parse" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="super_funicular_lemin_parse" TARGET_NAME="super_funicular_lemin_parse" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="super_funicular_lemin_parse" RUN_TARGET_NAME="super_funicular_lemin_parse">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -95,6 +104,7 @@
     </configuration>
     <list>
       <item itemvalue="CMake Application.super_funicular_lemin" />
+      <item itemvalue="CMake Application.super_funicular_lemin_parse" />
       <item itemvalue="JavaScript Debug.Unnamed" />
     </list>
   </component>
@@ -126,6 +136,10 @@
       <workItem from="1595147548600" duration="4248000" />
       <workItem from="1595158209767" duration="6074000" />
       <workItem from="1595165129882" duration="4658000" />
+      <workItem from="1595160235832" duration="86000" />
+      <workItem from="1595160340746" duration="332000" />
+      <workItem from="1595172708124" duration="59000" />
+      <workItem from="1595172771769" duration="604000" />
     </task>
     <task id="LOCAL-00001" summary="fopen and gnl not working T_T">
       <created>1594551704893</created>
@@ -220,10 +234,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="save commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595165175508">
+    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595160451003">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595165175508" />
+    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595160451003" />
     <state x="714" y="324" width="494" height="385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594984848985">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -240,26 +254,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="100" y="99" width="1720" height="840" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595148564663" />
-    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1595169149551">
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1595172760914">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595169149551" />
-    <state width="1878" height="123" key="GridCell.Tab.0.bottom" timestamp="1595169149950">
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595172760914" />
+    <state width="1860" height="272" key="GridCell.Tab.0.bottom" timestamp="1595160671391">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595169149950" />
-    <state width="1878" height="123" key="GridCell.Tab.0.center" timestamp="1595169149950">
+    <state width="1860" height="272" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595160671391" />
+    <state width="1860" height="272" key="GridCell.Tab.0.center" timestamp="1595160671391">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595169149950" />
-    <state width="1878" height="123" key="GridCell.Tab.0.left" timestamp="1595169149949">
+    <state width="1860" height="272" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595160671391" />
+    <state width="1860" height="272" key="GridCell.Tab.0.left" timestamp="1595160671390">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595169149949" />
-    <state width="1878" height="123" key="GridCell.Tab.0.right" timestamp="1595169149950">
+    <state width="1860" height="272" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595160671390" />
+    <state width="1860" height="272" key="GridCell.Tab.0.right" timestamp="1595160671391">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595169149950" />
+    <state width="1860" height="272" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595160671391" />
     <state width="1878" height="123" key="GridCell.Tab.1.bottom" timestamp="1595169142529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -292,14 +306,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1878" height="434" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595164247176" />
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1595165124711">
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1595172766413">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595165124711" />
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1595165124710">
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595172766413" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1595172766412">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595165124710" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595172766412" />
     <state x="597" y="283" width="715" height="466" key="MultipleFileMergeDialog" timestamp="1594926598121">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -320,10 +334,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="688" y="310" width="544" height="412" key="git4idea.merge.GitMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595148327471" />
-    <state x="756" y="533" width="546" height="420" key="refactoring.ChangeSignatureDialog" timestamp="1594820980697">
+    <state x="643" y="293" key="git4idea.merge.GitPullDialog" timestamp="1595160255314">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="756" y="533" width="546" height="420" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594820980697" />
+    <state x="643" y="293" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595160255314" />
+    <state x="756" y="533" width="546" height="420" key="refactoring.ChangeSignatureDialog" timestamp="1595173099954">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="756" y="533" width="546" height="420" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595173099954" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -335,18 +353,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/errors.c</url>
-          <line>89</line>
+          <line>91</line>
           <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/parse-validity-connections.c</url>
-          <line>38</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/parse-validity-connections_2.c</url>
-          <line>89</line>
-          <option name="timeStamp" value="57" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

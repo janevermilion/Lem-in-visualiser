@@ -12,37 +12,37 @@
 
 #include "lemin.h"
 
-void			print_rooms_array(t_parsed_room **pRoom) //delete later
+void			print_rooms_array(t_parsed_room **rooms) //delete later
 {
 	int i;
 	int j;
+	char *type;
 
 	i = 0;
 	printf("PARSER INFO FOR JTERRELL:\n");
-	printf("Quantity of ants: %i\n", pRoom[0]->ants);
-	printf("Quantity of rooms: %i\n", ft_arraylen((void **)pRoom));
+	printf("Quantity of ants: %i\n", rooms[0]->ants);
+	printf("Quantity of rooms: %i\n", ft_arraylen((void **)rooms));
 	printf("Rooms:\n");
-	while (pRoom[i])
+	while (rooms[i])
 	{
-		printf("   name: %s\n", pRoom[i]->name);
-		printf("   coordinates: x:%i, y:%i\n", pRoom[i]->x, pRoom[i]->y);
-		char *type;
-		if (pRoom[i]->type == 1)
+		printf("   name: %s\n", rooms[i]->name);
+		printf("   coordinates: x:%i, y:%i\n", rooms[i]->x, rooms[i]->y);
+		if (rooms[i]->type == 1)
 			type = "start";
-		if (pRoom[i]->type == 2)
+		if (rooms[i]->type == 2)
 			type = "normal";
-		if (pRoom[i]->type == 3)
+		if (rooms[i]->type == 3)
 			type = "end";
-		if(pRoom[i]->type == -1)//////////del
+		if(rooms[i]->type == -1)//////////del
 			type = "later";//////////
 		printf("   type: %s\n", type);
 		printf("      connected with rooms: ");
 		j = 0;
-		if(pRoom[i]->conn)
+		if(rooms[i]->conn)
 		{
-			while((pRoom[i]->conn)[j])
+			while((rooms[i]->conn)[j])
 			{
-				printf("%s ", (pRoom[i]->conn)[j]);
+				printf("%s ", (rooms[i]->conn)[j]);
 				j++;
 			}
 
@@ -72,41 +72,43 @@ int				this_room_is_appeared(char *room, t_parsed_room **rooms)
 	return (-1);
 }
 
-t_parsed_room	**memory_allocate_for_rooms_array(t_parsed_room **pRoom, int quantRooms)
+t_parsed_room	**memory_allocate_for_rooms_array(t_parsed_room **rooms, 
+int qnt_rooms)
 {
 	int i;
 
 	i = 0;
-	pRoom = (t_parsed_room **)ft_memalloc(sizeof(t_parsed_room *) * (quantRooms + 1));
-	if (!pRoom)
+	rooms = (t_parsed_room **)ft_memalloc(sizeof(t_parsed_room *) 
+	* (qnt_rooms + 1));
+	if (!rooms)
 		return (NULL);
-	while (i < quantRooms)
+	while (i < qnt_rooms)
 	{
-		pRoom[i] = (t_parsed_room *)ft_memalloc(sizeof(t_parsed_room));
-		if (!pRoom[i])
+		rooms[i] = (t_parsed_room *)ft_memalloc(sizeof(t_parsed_room));
+		if (!rooms[i])
 			return (NULL);
-		pRoom[i]->ants = -1;
-		pRoom[i]->x = -1;
-		pRoom[i]->y = -1;
-		pRoom[i]->name = NULL;
-		pRoom[i]->type = -1;
-		pRoom[i]->conn = NULL;
+		rooms[i]->ants = -1;
+		rooms[i]->x = -1;
+		rooms[i]->y = -1;
+		rooms[i]->name = NULL;
+		rooms[i]->type = -1;
+		rooms[i]->conn = NULL;
 		i++;
 	}
-	pRoom[i] = NULL;
-	return (pRoom);
+	rooms[i] = NULL;
+	return (rooms);
 }
 
-int			if_all_coordinates_is_zero(t_parsed_room **pRoom) 
+int			if_all_coordinates_is_zero(t_parsed_room **rooms)
 {
 	int i;
 	int zeroes;
 
 	zeroes = 0;
 	i = 0;
-	while (pRoom[i])
+	while (rooms[i])
 	{
-		if (pRoom[i]->x == 0 && pRoom[i]->y == 0)
+		if (rooms[i]->x == 0 && rooms[i]->y == 0)
 			zeroes++;
 		else
 			return (0);
