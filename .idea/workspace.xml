@@ -31,10 +31,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1ca8c2cd-f6f3-46da-8ffa-c9080484206a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parse-validity-connections.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-connections.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parse-validity-connections_2.c" beforeDir="false" afterPath="$PROJECT_DIR$/src/parse-validity-connections_2.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +41,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -125,7 +121,8 @@
       <workItem from="1594982080087" duration="5511000" />
       <workItem from="1595147548600" duration="4248000" />
       <workItem from="1595158209767" duration="6074000" />
-      <workItem from="1595165129882" duration="4658000" />
+      <workItem from="1595165129882" duration="4709000" />
+      <workItem from="1595176754624" duration="109000" />
     </task>
     <task id="LOCAL-00001" summary="fopen and gnl not working T_T">
       <created>1594551704893</created>
@@ -190,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595164967858</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="norme errors">
+      <created>1595170262631</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1595170262631</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +221,8 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/janevermilion/super-funicular-lemin&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml&#10;#&#9;.idea/modules.xml" />
     <MESSAGE value="adding node server" />
     <MESSAGE value="save commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="save commit" />
+    <MESSAGE value="norme errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="norme errors" />
   </component>
   <component name="WindowStateProjectService">
     <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595165175508">
@@ -232,50 +237,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="724" y="230" width="424" height="579" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594926377690" />
-    <state x="538" y="71" width="817" height="848" key="CommitChangelistDialog2" timestamp="1595164966153">
+    <state x="538" y="71" width="817" height="848" key="CommitChangelistDialog2" timestamp="1595170262216">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="538" y="71" width="817" height="848" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1595164966153" />
+    <state x="538" y="71" width="817" height="848" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1595170262216" />
     <state x="100" y="99" width="1720" height="840" key="DiffContextDialog" timestamp="1595148564663">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="100" y="99" width="1720" height="840" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595148564663" />
-    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1595169149551">
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1595176853308">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595169149551" />
-    <state width="1878" height="123" key="GridCell.Tab.0.bottom" timestamp="1595169149950">
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595176853308" />
+    <state width="1878" height="434" key="GridCell.Tab.0.bottom" timestamp="1595170294125">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595169149950" />
-    <state width="1878" height="123" key="GridCell.Tab.0.center" timestamp="1595169149950">
+    <state width="1878" height="434" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595170294125" />
+    <state width="1878" height="434" key="GridCell.Tab.0.center" timestamp="1595170294124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595169149950" />
-    <state width="1878" height="123" key="GridCell.Tab.0.left" timestamp="1595169149949">
+    <state width="1878" height="434" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595170294124" />
+    <state width="1878" height="434" key="GridCell.Tab.0.left" timestamp="1595170294123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595169149949" />
-    <state width="1878" height="123" key="GridCell.Tab.0.right" timestamp="1595169149950">
+    <state width="1878" height="434" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595170294123" />
+    <state width="1878" height="434" key="GridCell.Tab.0.right" timestamp="1595170294124">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595169149950" />
-    <state width="1878" height="123" key="GridCell.Tab.1.bottom" timestamp="1595169142529">
+    <state width="1878" height="434" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595170294124" />
+    <state width="1878" height="434" key="GridCell.Tab.1.bottom" timestamp="1595170294127">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595169142529" />
-    <state width="1878" height="123" key="GridCell.Tab.1.center" timestamp="1595169142528">
+    <state width="1878" height="434" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595170294127" />
+    <state width="1878" height="434" key="GridCell.Tab.1.center" timestamp="1595170294126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595169142528" />
-    <state width="1878" height="123" key="GridCell.Tab.1.left" timestamp="1595169142528">
+    <state width="1878" height="434" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595170294126" />
+    <state width="1878" height="434" key="GridCell.Tab.1.left" timestamp="1595170294126">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595169142528" />
-    <state width="1878" height="123" key="GridCell.Tab.1.right" timestamp="1595169142529">
+    <state width="1878" height="434" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595170294126" />
+    <state width="1878" height="434" key="GridCell.Tab.1.right" timestamp="1595170294127">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="123" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595169142529" />
+    <state width="1878" height="434" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595170294127" />
     <state width="1878" height="434" key="GridCell.Tab.2.bottom" timestamp="1595164247176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -292,14 +297,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1878" height="434" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595164247176" />
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1595165124711">
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1595176862440">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595165124711" />
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1595165124710">
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595176862440" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1595176862439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595165124710" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595176862439" />
     <state x="597" y="283" width="715" height="466" key="MultipleFileMergeDialog" timestamp="1594926598121">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -308,10 +313,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="891" y="73" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594927174497" />
-    <state x="547" y="233" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1595164977154">
+    <state x="547" y="233" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1595170270326">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="547" y="233" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595164977154" />
+    <state x="547" y="233" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1595170270326" />
     <state x="750" y="414" width="393" height="161" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595148163718">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
