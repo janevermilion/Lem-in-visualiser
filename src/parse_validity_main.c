@@ -29,7 +29,8 @@ int		fill_room_by_line(char *data, t_parsed_room *room)
 			room->name = ft_strdup(splited_line[0]);
 		room->x = ft_atoi_long_long(splited_line[1]);
 		room->y = ft_atoi_long_long(splited_line[2]);
-		if (room->x < 0 || room->y < 0 || room->x > INT_MAX || room->y > INT_MAX)
+		if (room->x < 0 || room->y < 0 || room->x > INT_MAX || 
+		room->y > INT_MAX)
 			err = -2;
 	}
 	else
@@ -39,7 +40,8 @@ int		fill_room_by_line(char *data, t_parsed_room *room)
 	return (err);
 }
 
-int				fill_rooms_name_and_coords(char **data, t_main_indexes *indexes, t_parsed_room **rooms_array)
+int				fill_rooms_name_and_coords(char **data, t_indexes *indexes, 
+t_parsed_room **rooms_array)
 {
 	int i;
 	int rooms_iter;
@@ -51,8 +53,9 @@ int				fill_rooms_name_and_coords(char **data, t_main_indexes *indexes, t_parsed
 	{
 		if (data[i][0] != '#')
 		{
-			if ((err = fill_room_by_line(data[i], rooms_array[rooms_iter])) < 0)
-				parseError((err * -1), rooms_array, indexes, data);
+			err = fill_room_by_line(data[i], rooms_array[rooms_iter]);
+			if (err < 0)
+				throw_parse_err((err * -1), rooms_array, indexes, data);
 			(rooms_array[rooms_iter])->ants = indexes->ants;
 			(rooms_array[rooms_iter])->type = 2;
 
@@ -68,7 +71,8 @@ int				fill_rooms_name_and_coords(char **data, t_main_indexes *indexes, t_parsed
 }
 
 
-void			print_map_and_free_parse_structs(t_main_indexes *indexes, char **data)
+void			print_map_and_free_parse_structs(t_indexes *indexes, 
+char **data)
 {
 	int i;
 
@@ -98,7 +102,8 @@ int				coordinates_is_repeated(t_parsed_room **rooms_array)
 		{
 			if (i != j)
 			{
-				if (rooms_array[i]->x == rooms_array[j]->x && rooms_array[i]->y == rooms_array[j]->y)
+				if (rooms_array[i]->x == rooms_array[j]->x && 
+				rooms_array[i]->y == rooms_array[j]->y)
 					return (1);
 			}
 			j++;
@@ -113,20 +118,21 @@ t_parsed_room	**check_validity_of_input_data(char **data, int lines)
 {
 	int					i;
 	t_parsed_room		**rooms_array;
-	t_main_indexes		*indexes;
+	t_indexes			*indexes;
 
 	if (ft_arraylen((void **)data) != lines)
-		parseError(11, NULL, NULL, data);
+		throw_parse_err(11, NULL, NULL, data);
 	indexes = find_indexes_to_parse(data, indexes);
-	if (!(rooms_array = memory_allocate_for_rooms_array(rooms_array, indexes->rooms)))
-		parseError(1, NULL, indexes, data);
+	if (!(rooms_array = memory_allocate_for_rooms_array(rooms_array, 
+	indexes->rooms)))
+		throw_parse_err(1, NULL, indexes, data);
 	i = fill_rooms_name_and_coords(data, indexes, rooms_array);
 	fill_connections_for_rooms(i, rooms_array, data, indexes);
 	check_connections_for_rooms(rooms_array, data, indexes);
 	if (if_all_coordinates_is_zero(rooms_array) == 1)
-		parseError(3, rooms_array, indexes, data);
+		throw_parse_err(3, rooms_array, indexes, data);
 	if (coordinates_is_repeated(rooms_array))
-		parseError(13, rooms_array, indexes, data);
+		throw_parse_err(13, rooms_array, indexes, data);
 	print_map_and_free_parse_structs(indexes, data);
 	print_rooms_array(rooms_array);//delete later
 	return (rooms_array);

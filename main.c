@@ -17,7 +17,7 @@ t_lem_in	*ft_init_lem_in(void)
 	t_lem_in	*lemin;
 
 	if (!(lemin = (t_lem_in *)ft_memalloc(sizeof(t_lem_in))))
-		RaiseError(0);
+        raise_error(0);
 	lemin->ants = 0;
 	lemin->commands = (char**)malloc(sizeof(char*) * 10);
 	lemin->comments = (char**)malloc(sizeof(char*) * 10);
@@ -50,10 +50,10 @@ int main(int argc, char **argv)
     char **array_for_validity_check = ft_strsplit(line_result,'\n');
     ft_memdel((void **) &line_result);
     rooms_array = check_validity_of_input_data(array_for_validity_check, lines);
-    free_parseStructures(rooms_array, NULL, NULL);//DELETE later but freee rooms by this func only
+    free_parsing_structs(rooms_array, NULL, NULL);//DELETE later but freee rooms by this func only
     // lem_in = ft_init_lem_in();
     //if(!get_solution(lem_in, rooms_array))
-    //    RaiseError(3);
+    //    raise_error(3);
 
     return 0;
 }

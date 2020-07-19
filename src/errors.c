@@ -12,7 +12,7 @@
 
 #include "lemin.h"
 
-void	RaiseError(int e)
+void	raise_error(int e)
 {
 	if (e == 0 || e == 1)
 	{
@@ -24,7 +24,8 @@ void	RaiseError(int e)
 	}
 }
 
-void	free_parseStructures(t_parsed_room **rooms, t_main_indexes *indexes, char **data)
+void	free_parsing_structs(t_parsed_room **rooms,
+                             t_indexes *indexes, char **data)
 {
 	int i;
 
@@ -47,7 +48,7 @@ void	free_parseStructures(t_parsed_room **rooms, t_main_indexes *indexes, char *
 	}
 }
 
-void	parseError_more_err(int e)
+void	more_parse_errs(int e)
 {
 	if (e == 8)
 		ft_putstr("start or end room inside paths part\n");
@@ -67,7 +68,8 @@ void	parseError_more_err(int e)
 		ft_putstr("room's name can't be named using by first 'L'\n");
 }
 
-void	parseError(int e, t_parsed_room **rooms, t_main_indexes *indexes, char **data)
+void	throw_parse_err(int e, t_parsed_room **rooms,
+                        t_indexes *indexes, char **data)
 {
 	ft_putstr("ERROR\n>>Parse error: ");
 	if (e == 0)
@@ -86,7 +88,7 @@ void	parseError(int e, t_parsed_room **rooms, t_main_indexes *indexes, char **da
 		ft_putstr("no start/end room or more one start/end\n");
 	else if (e == 7)
 		ft_putstr("not finded start/end/paths \n");
-	parseError_more_err(e);
-	free_parseStructures(rooms, indexes, data);
+	more_parse_errs(e);
+	free_parsing_structs(rooms, indexes, data);
 	exit(1);
 }
