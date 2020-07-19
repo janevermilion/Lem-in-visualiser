@@ -113,6 +113,8 @@ function parseInfo(text)
 {
    // let splitted_info = text.split('\r\n');//for Win
     let splitted_info = text.split('\n');//for linux
+    if (splitted_info[0] === 'ERROR')
+        throw new Error('File is not valid.\nError description: ' + splitted_info[1]);
     let Indexes =findMainIndexes(splitted_info);
     let info = [];
     info['quant_of_ants'] = splitted_info[0];
@@ -140,7 +142,7 @@ function parseInfo(text)
         ants.push(new Ant(i, splitted_info.slice(Indexes['solution'], splitted_info.length - 1)));
     }
     info['ants'] = ants;
-  draw(info);
+    draw(info);
 }
 
 fetch('result.txt')
@@ -149,4 +151,13 @@ fetch('result.txt')
     })
     .then(function (text) {
             parseInfo(text);
+    })
+    .catch(function (error) {
+        let errorHeader = document.createElement("h1");
+        errorHeader.classList.add('error-header');
+        console.log(error)
+        errorHeader.innerText = error;
+        container.append(errorHeader);
+        document.querySelector('.info_about').style.display = 'none';
+        document.querySelector('.buttons-container').style.display = 'none';
     })

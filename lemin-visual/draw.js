@@ -249,6 +249,7 @@ function hangScaleListeners(info, scale, speed) {
         speed+=300;
         calculateAll(1);
     })
+
 }
 
 function draw(info) {
@@ -259,7 +260,7 @@ function draw(info) {
     drawConnections(info, scale);
     putAntsInStartRoom(info, scale);
     fillInfo(info);
-    animArr = animateAnts(info, speed);
+    let animArr = animateAnts(info, speed);
     hangAnimationListeners(animArr);
     hangScaleListeners(info,scale, speed);
 }
