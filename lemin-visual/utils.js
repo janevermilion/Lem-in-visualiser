@@ -123,18 +123,35 @@ function fillInfo(info) {
 
     let generatedRooms = info['rooms'].reduce(function(string, curr) {
         if (!string.length)
-            return info['rooms'][0]['name'];
+            return info['rooms'][0]['name'] + ', ' + curr['name'];
         return string + ', ' + curr['name']
     });
     roomList.innerText = 'Rooms: \n' + generatedRooms;
+
+
     let generatedConn = info['rooms'].reduce(function(string, curr) {
         if (!string.length) {
             let currConnections = info['rooms'][0]['connections'].reduce(function(connectionsString, currConn) {
                 if (!connectionsString.length)
                     return curr['connections'][0];
+                if (!currConn)
+                    return connectionsString;
                 return connectionsString + ', ' + currConn;
             });
-            return info['rooms'][0]['name'] + ': ' + currConnections + '\n'
+            let connForFirstRoom;
+            if(curr['connections'].length)
+            {
+                connForFirstRoom = curr['name'] + ' :' + curr['connections'].reduce(function (connectionString, currConn) {
+                    if (!connectionsString.length)
+                        return curr['connections'][0];
+                    if (!currConn)
+                        return connectionsString;
+                    return connectionsString + ', ' + currConn;
+                }) + '\n';
+            }
+            else
+                connForFirstRoom = curr['name'] + ' :' + "no connections\n";
+            return info['rooms'][0]['name'] + ': ' + currConnections + '\n' + connForFirstRoom;
         } else {
             if (curr['connections'].length) {
                 let currConnections = curr['connections'].reduce(function(connectionsString, currConn) {

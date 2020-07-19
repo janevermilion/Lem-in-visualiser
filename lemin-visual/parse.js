@@ -112,9 +112,11 @@ function findMainIndexes(arr) {
 function parseInfo(text)
 {
    // let splitted_info = text.split('\r\n');//for Win
-    let splitted_info = text.split('\n');//for linux
+    let splitted_info = text.split('\n');
     if (splitted_info[0] === 'ERROR')
         throw new Error('File is not valid.\nError description: ' + splitted_info[1]);
+    else if (splitted_info[0] === '<!DOCTYPE html>')
+        throw new Error('File not found');
     let Indexes =findMainIndexes(splitted_info);
     let info = [];
     info['quant_of_ants'] = splitted_info[0];
@@ -145,19 +147,28 @@ function parseInfo(text)
     draw(info);
 }
 
-fetch('result.txt')
-    .then(function (response) {
-        return response.text();
-    })
-    .then(function (text) {
+
+(async () => {
+    await fetch('result.txt')
+        .then(function (response) {
+            return response.text();
+        })
+        .then(function (text) {
             parseInfo(text);
-    })
-    .catch(function (error) {
-        let errorHeader = document.createElement("h1");
-        errorHeader.classList.add('error-header');
-        console.log(error)
-        errorHeader.innerText = error;
-        container.append(errorHeader);
-        document.querySelector('.info_about').style.display = 'none';
-        document.querySelector('.buttons-container').style.display = 'none';
-    })
+        })
+        .catch(function (error) {
+            console.log(error);
+            let errorHeader = document.createElement("h1");
+            errorHeader.classList.add('error-header');
+            errorHeader.innerText = error;
+            if (error.toString() === "TypeError: Failed to fetch")
+                errorHeader.innerText = error.toString() + '\nPlease, start the web-server.'
+            if (error.toString() === "TypeError: Reduce of empty array with no initial value")
+                errorHeader.innerText = 'File to parse is not found.'
+            container.append(errorHeader);
+            document.querySelector('.info_about').style.display = 'none';
+            document.querySelector('.buttons-container').style.display = 'none';
+        })
+})();
+
+

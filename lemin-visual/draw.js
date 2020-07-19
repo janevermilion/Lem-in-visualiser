@@ -206,7 +206,7 @@ function hangAnimationListeners(animationArray)
     startButton.addEventListener('click', playAnimation);
     pauseButton.addEventListener('click', pauseAnimation);
     restartButton.addEventListener('click', function() {
-        animArr.forEach(function(anim) {
+        animationArray.forEach(function(anim) {
             anim.restart();
         })
     })
