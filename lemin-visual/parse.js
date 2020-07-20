@@ -1,4 +1,4 @@
-
+let fileName = "result.txt";
 function Room(str, opt) {
     let splited = str.split(' ');
     this.name = splited[0];
@@ -147,9 +147,9 @@ function parseInfo(text)
     draw(info);
 }
 
-/*
+
 (async () => {
-    await fetch('result.txt')
+    await fetch(fileName)
         .then(function (response) {
             return response.text();
         })
@@ -170,4 +170,4 @@ function parseInfo(text)
             document.querySelector('.buttons-container').style.display = 'none';
         })
 })();
-*/
+
