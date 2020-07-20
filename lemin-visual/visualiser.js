@@ -10,12 +10,19 @@ const getData = (fileName, type) =>
         })
     );
 
-getData('result.txt', 'utf8')
+getData(process.argv[2], 'utf8')
     .then(text =>
     {
+        var result = "let fileName = \'" + process.argv[2] + "\';";
+        try{
+            fs.writeFileSync('filename.js', result);
+        }catch (e){
+            console.log("Cannot write file ", e);
+        }
+        console.log('THE MAP IS:\n' + text);
         connect()
             .use(serveStatic(__dirname))
-            .listen(8888, () => {console.log('Visualiser running on http://localhost:8888')
+            .listen(8000, () => {console.log('Visualiser running on http://localhost:8000')
             });
     })
     .catch(error => console.log('Error: ', error));
