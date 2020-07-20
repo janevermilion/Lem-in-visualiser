@@ -9,16 +9,16 @@ const getData = (fileName, type) =>
             return err ? reject(err) : resolve(data);
         })
     );
-
+var result = "let fileName = \'" + process.argv[2] + "\';";
+try{
+    fs.writeFileSync('filename.js', result);
+}catch (e){
+    console.log("Cannot write file ", e);
+}
 getData(process.argv[2], 'utf8')
     .then(text =>
     {
-        var result = "let fileName = \'" + process.argv[2] + "\';";
-        try{
-            fs.writeFileSync('filename.js', result);
-        }catch (e){
-            console.log("Cannot write file ", e);
-        }
+
         console.log('THE MAP IS:\n' + text);
         connect()
             .use(serveStatic(__dirname))
