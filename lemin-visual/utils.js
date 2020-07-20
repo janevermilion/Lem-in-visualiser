@@ -197,5 +197,4 @@ function fillInfo(info) {
         return string + ('L' + curr['number'] + ': ' + currConnections + '\n');
     })
     antsPaths.innerText = 'Ants paths:\n' + generatedPaths;
-
 }

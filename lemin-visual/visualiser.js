@@ -2,6 +2,8 @@ var connect = require('connect');
 var serveStatic = require('serve-static');
 const fetch = require("node-fetch");///del&
 var fs = require('fs');
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 
 const getData = (fileName, type) =>
     new Promise((resolve, reject) =>
@@ -12,21 +14,20 @@ const getData = (fileName, type) =>
     );
 
 
-const parseModule= require(__dirname + '/test.js');
-getData('result.txt', 'utf8')
+const parseModule= require(__dirname + '/parseInfo.js');
+const drawModule = require(__dirname + '/drawParsed.js')
+getData(process.argv[2], 'utf8')
     .then(text =>
     {
-        console.log(text);
-
-        const parseInfo = parseModule.parseInfo(text);
-        //parseInfo(text)
+        return parseModule.parseInfo(text);
     })
     .then(data => {
-        //console.log('Data: ', data)
+        console.log('Data: ', data)
         connect()
             .use(serveStatic(__dirname))
             .listen(8000, () => {console.log('Visualiser running on http://localhost:8000')
             });
+       // drawModule.draw(data);
     })
     .catch(error => console.log('Error: ', error));
 /*
