@@ -1,6 +1,4 @@
 
-
-//------------------
 function drawRooms(info, scale) {
     let roomContainer = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     roomContainer.setAttribute('width', screenWidth * scale);
@@ -11,27 +9,31 @@ function drawRooms(info, scale) {
     roomContainer.style.zIndex = '10';
     for (var i = 0; i < info['rooms'].length; i++) {
         let curr = info['rooms'][i];
-        let room = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        room.id = curr['name'];
-        room.classList.add('room');
-        room.setAttributeNS(null, 'x', curr['x'] * roomSize * scale + 'px');
-        room.setAttributeNS(null, 'y', curr['y'] * roomSize * scale + 'px');
-        room.setAttributeNS(null, 'ry', '10px');
-        room.setAttributeNS(null, 'rx', '10px');
-        room.setAttributeNS(null, 'width', roomSize * scale + 'px');
-        room.setAttributeNS(null, 'height', roomSize * scale + 'px');
-        room.setAttributeNS(null, 'fill', '#b6155b');
-        let name = curr['type'] !== null ? curr['type'] : curr['name'];
-        var txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        txt.innerHTML = name;
-        txt.setAttributeNS(null, 'fill', '#2d00b6');
-        txt.setAttributeNS(null, 'font-family', 'Arial');
-        txt.setAttributeNS(null, 'x', (curr['x'] * roomSize * scale) + 'px');
-        txt.setAttributeNS(null, 'y', (curr['y'] * roomSize * scale - 5) + 'px');
-        txt.setAttributeNS(null, 'font-size', 15 * scale + 'px');
-        roomContainer.appendChild(room);
-        roomContainer.appendChild(txt);
-        container.appendChild(roomContainer);
+        console.log(curr);
+        if(curr['x'] != null && curr['x'] !== undefined && !isNaN(curr['x']) && curr['y'] != null && curr['y'] !== undefined && !isNaN(curr['y']))
+        {
+            let room = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            room.id = curr['name'];
+            room.classList.add('room');
+            room.setAttributeNS(null, 'x', curr['x'] * roomSize * scale + 'px');
+            room.setAttributeNS(null, 'y', curr['y'] * roomSize * scale + 'px');
+            room.setAttributeNS(null, 'ry', roomSize * scale/5 + 'px');
+            room.setAttributeNS(null, 'rx', roomSize * scale/5 + 'px');
+            room.setAttributeNS(null, 'width', roomSize * scale + 'px');
+            room.setAttributeNS(null, 'height', roomSize * scale + 'px');
+            room.setAttributeNS(null, 'fill', '#b6155b');
+            let name = curr['type'] !== null ? curr['type'] : curr['name'];
+            var txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            txt.innerHTML = name;
+            txt.setAttributeNS(null, 'fill', '#2d00b6');
+            txt.setAttributeNS(null, 'font-family', 'Arial');
+            txt.setAttributeNS(null, 'x', (curr['x'] * roomSize * scale) + 'px');
+            txt.setAttributeNS(null, 'y', (curr['y'] * roomSize * scale - 5) + 'px');
+            txt.setAttributeNS(null, 'font-size', 15 * scale + 'px');
+            roomContainer.appendChild(room);
+            roomContainer.appendChild(txt);
+            container.appendChild(roomContainer);
+        }
     }
 }
 
@@ -45,23 +47,26 @@ function drawConnections(info, scale) {
     for (var i = 0; i < info['rooms'].length; i++) {
         let curr = info['rooms'][i];
         let currInDoc = document.getElementById(curr['name']);
-        curr['connections'].forEach(function(conn) {
-            let line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            let stroke = "#" + ((1 << 24) * Math.random() | 0).toString(16);
-            let x1 = parseInt(currInDoc.getAttribute('x')) + roomSize / 2 * scale + 'px';
-            let y1 = parseInt(currInDoc.getAttribute('y')) + roomSize / 2 * scale + 'px';
-            let x2 = parseInt(document.getElementById(conn).getAttribute('x')) + roomSize / 2 * scale + 'px';
-            let y2 = parseInt(document.getElementById(conn).getAttribute('y')) + roomSize / 2 * scale + 'px';
-            line.setAttributeNS(null, 'x1', x1);
-            line.setAttributeNS(null, 'x2', x2);
-            line.setAttributeNS(null, 'y1', y1);
-            line.setAttributeNS(null, 'y2', y2);
-            line.setAttributeNS(null, 'stroke', stroke);
-            line.id = 'path ' + curr['name'] + '-' + conn;
-            line.style.zIndex = '5';
-            lineContainer.id = "paths";
-            lineContainer.appendChild(line);
-        })
+        if(currInDoc)
+        {
+            curr['connections'].forEach(function(conn) {
+                let line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                let stroke = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+                let x1 = parseInt(currInDoc.getAttribute('x')) + roomSize / 2 * scale + 'px';
+                let y1 = parseInt(currInDoc.getAttribute('y')) + roomSize / 2 * scale + 'px';
+                let x2 = parseInt(document.getElementById(conn).getAttribute('x')) + roomSize / 2 * scale + 'px';
+                let y2 = parseInt(document.getElementById(conn).getAttribute('y')) + roomSize / 2 * scale + 'px';
+                line.setAttributeNS(null, 'x1', x1);
+                line.setAttributeNS(null, 'x2', x2);
+                line.setAttributeNS(null, 'y1', y1);
+                line.setAttributeNS(null, 'y2', y2);
+                line.setAttributeNS(null, 'stroke', stroke);
+                line.id = 'path_' + curr['name'] + '-' + conn;
+                line.style.zIndex = '5';
+                lineContainer.id = "paths";
+                lineContainer.appendChild(line);
+            })
+        }
 
     }
     container.appendChild(lineContainer);
@@ -157,26 +162,29 @@ function animateAnts(info, duration) {
             loop: true,
             autoplay: false
         })
-
-        for (var i = 0; i < path.length; i++) {
-            if (path[i]) {
-                let room = path[i];
-                let r = document.getElementById(room);
-                x2 = parseInt(r.getAttribute('x')) - widthOfGhost / 2 + roomSize / 2;
-                y2 = parseInt(r.getAttribute('y')) - widthOfGhost / 2 + roomSize / 2;
-                let deltaX = parseInt(x2) - parseInt(x1);
-                let deltaY = parseInt(y2) - parseInt(y1);
-                animation.add({
-                    targets: ant,
-                    translateX: deltaX,
-                    translateY: deltaY,
-                })
-            } else {
-                animation.add({
-                    delay: duration
-                })
+        if(path)
+        {
+            for (var i = 0; i < path.length; i++) {
+                if (path[i]) {
+                    let room = path[i];
+                    let r = document.getElementById(room);
+                    x2 = parseInt(r.getAttribute('x')) - widthOfGhost / 2 + roomSize / 2;
+                    y2 = parseInt(r.getAttribute('y')) - widthOfGhost / 2 + roomSize / 2;
+                    let deltaX = parseInt(x2) - parseInt(x1);
+                    let deltaY = parseInt(y2) - parseInt(y1);
+                    animation.add({
+                        targets: ant,
+                        translateX: deltaX,
+                        translateY: deltaY,
+                    })
+                } else {
+                    animation.add({
+                        delay: duration
+                    })
+                }
             }
         }
+
         animArr.push(animation);
     })
     return animArr;
@@ -227,7 +235,7 @@ function hangScaleListeners(info, scale, speed) {
         container.removeChild(document.getElementById('ants'));
         putAntsInStartRoom(info, scale);
         fillInfo(info);
-        animArr = animateAnts(info, speed);
+        let animArr = animateAnts(info, speed);
         hangAnimationListeners(animArr);
 
     }
@@ -237,7 +245,8 @@ function hangScaleListeners(info, scale, speed) {
         calculateAll(null)
     });
     scaleMinus.addEventListener('click', function() {
-        scale -= 0.5;
+        if(scale - 0.5 > 0)
+            scale -= 0.5;
         calculateAll(null)
     });
     speedPlus.addEventListener('click',function () {
@@ -248,7 +257,6 @@ function hangScaleListeners(info, scale, speed) {
         speed+=300;
         calculateAll(1);
     })
-
 }
 
 function draw(info) {

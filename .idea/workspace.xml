@@ -20,7 +20,7 @@
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="super_funicular_lemin_parse" targetName="super_funicular_lemin" />
+      <config projectName="super_funicular_lemin" targetName="super_funicular_lemin" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -31,6 +31,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1ca8c2cd-f6f3-46da-8ffa-c9080484206a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/draw.js" beforeDir="false" afterPath="$PROJECT_DIR$/lemin-visual/draw.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/filename.js" beforeDir="false" afterPath="$PROJECT_DIR$/lemin-visual/filename.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/maps/42.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/lemin-visual/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/lemin-visual/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lemin-visual/visualiser.js" beforeDir="false" afterPath="$PROJECT_DIR$/lemin-visual/visualiser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +47,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -65,7 +73,7 @@
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lemin-visual/maps/3-groups.map" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lemin-visual/maps/10K.map" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -79,8 +87,8 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.localhost:8000">
-    <configuration name="super_funicular_lemin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$FilePrompt$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="super_funicular_lemin_parse" TARGET_NAME="super_funicular_lemin" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="super_funicular_lemin_parse" RUN_TARGET_NAME="super_funicular_lemin">
+  <component name="RunManager" selected="CMake Application.super_funicular_lemin">
+    <configuration name="super_funicular_lemin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="true" REDIRECT_INPUT_PATH="$FilePrompt$" PASS_PARENT_ENVS_2="true" PROJECT_NAME="super_funicular_lemin" TARGET_NAME="super_funicular_lemin" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="super_funicular_lemin" RUN_TARGET_NAME="super_funicular_lemin">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -96,8 +104,8 @@
     </configuration>
     <list>
       <item itemvalue="Attach to Node.js/Chrome.testtt" />
+      <item itemvalue="CMake Application.super_funicular_lemin" />
       <item itemvalue="JavaScript Debug.localhost:8000" />
-      <item itemvalue="Node.js.Unnamed" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -134,6 +142,8 @@
       <workItem from="1595172771769" duration="604000" />
       <workItem from="1595236713829" duration="330000" />
       <workItem from="1595238693833" duration="2505000" />
+      <workItem from="1595336590176" duration="40000" />
+      <workItem from="1595336632991" duration="442000" />
     </task>
     <task id="LOCAL-00001" summary="fopen and gnl not working T_T">
       <created>1594551704893</created>
@@ -236,10 +246,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="save commit(linux is not save)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595239312292">
+    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595336663394">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595239312292" />
+    <state x="399" y="181" width="1084" height="683" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595336663394" />
     <state x="714" y="324" width="494" height="385" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594984848985">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -256,26 +266,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="100" y="99" width="1720" height="840" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595148564663" />
-    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1595237037415">
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl" timestamp="1595336671684">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595237037415" />
-    <state width="1899" height="330" key="GridCell.Tab.0.bottom" timestamp="1595241213572">
+    <state x="1195" y="119" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595336671684" />
+    <state width="1878" height="123" key="GridCell.Tab.0.bottom" timestamp="1595337071344">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="330" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595241213572" />
-    <state width="1899" height="330" key="GridCell.Tab.0.center" timestamp="1595241213572">
+    <state width="1878" height="123" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595337071344" />
+    <state width="1878" height="123" key="GridCell.Tab.0.center" timestamp="1595337071341">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="330" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595241213572" />
-    <state width="1899" height="330" key="GridCell.Tab.0.left" timestamp="1595241213572">
+    <state width="1878" height="123" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595337071341" />
+    <state width="1878" height="123" key="GridCell.Tab.0.left" timestamp="1595337071339">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="330" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595241213572" />
-    <state width="1899" height="330" key="GridCell.Tab.0.right" timestamp="1595241213572">
+    <state width="1878" height="123" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595337071339" />
+    <state width="1878" height="123" key="GridCell.Tab.0.right" timestamp="1595337071343">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="330" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595241213572" />
+    <state width="1878" height="123" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595337071343" />
     <state width="1899" height="330" key="GridCell.Tab.1.bottom" timestamp="1595241213573">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -324,14 +334,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="330" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595241213574" />
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1595172766413">
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel" timestamp="1595336629419">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595172766413" />
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1595172766412">
+    <state width="640" height="204" key="ImportCMakeProjectWizard.bottomPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595336629419" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel" timestamp="1595336629418">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595172766412" />
+    <state width="640" height="476" key="ImportCMakeProjectWizard.topPanel/0.0.1920.1040@0.0.1920.1040" timestamp="1595336629418" />
     <state x="597" y="283" width="715" height="466" key="MultipleFileMergeDialog" timestamp="1594926598121">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -366,14 +376,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/lemin-visual/visualiser.js</url>
-          <line>29</line>
-          <properties lambdaOrdinal="-1" />
+          <line>33</line>
           <option name="timeStamp" value="61" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/lemin-visual/drawParsed.js</url>
           <line>4</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>

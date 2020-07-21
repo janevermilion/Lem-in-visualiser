@@ -1,17 +1,4 @@
-const restartButton = document.querySelector('#restart-button');
-const scalePlus = document.querySelector('#scale-mapp');
-const scaleMinus = document.querySelector('#scale-mapm');
-const speedPlus = document.querySelector('#speedp');
-const speedMinus = document.querySelector('#speedm');
-const container = document.querySelector('.lemin-container');
-const startButton = document.querySelector('#start-button');
-const pauseButton = document.querySelector('#pause-button');
-let roomSize = 40;
-let screenWidth = window.screen.width;
-let screenHeight = window.screen.height;
-container.style.width = screenWidth;
-container.style.height = screenHeight;
-const widthOfGhost = Math.floor(roomSize / 1.5);
+
 function returnMaxAndMinArrayValues(arr) {
     let resultArr = [];
     let xArr = [];
@@ -108,8 +95,6 @@ function changeInfo(info) {
         return room;
 
     });
-
-  //  info['rooms'] = is_too_big(info['rooms']);
     is_overlap(info['rooms']);
     return info;
 }
@@ -121,7 +106,7 @@ function fillInfo(info) {
     let antsPaths = document.getElementById('ants-paths');
     ants.innerText = 'Ants: ' + info['quant_of_ants'];
 
-    let generatedRooms = info['rooms'].reduce(function(string, curr) {
+    let generatedRooms = info['rooms'].reduce(function (string, curr) {
         if (!string.length)
             return info['rooms'][0]['name'] + ', ' + curr['name'];
         return string + ', ' + curr['name']
@@ -129,33 +114,37 @@ function fillInfo(info) {
     roomList.innerText = 'Rooms: \n' + generatedRooms;
 
 
-    let generatedConn = info['rooms'].reduce(function(string, curr) {
+    let generatedConn = info['rooms'].reduce(function (string, curr) {
         if (!string.length) {
-            let currConnections = info['rooms'][0]['connections'].reduce(function(connectionsString, currConn) {
-                if (!connectionsString.length)
-                    return curr['connections'][0];
-                if (!currConn)
-                    return connectionsString;
-                return connectionsString + ', ' + currConn;
-            });
-            let connForFirstRoom;
-            if(curr['connections'].length)
+            let currConnections;
+            if(info['rooms'][0]['connections'] !== null)
             {
-                connForFirstRoom = curr['name'] + ' :' + curr['connections'].reduce(function (connectionString, currConn) {
-                    if (!connectionsString.length)
+                currConnections = info['rooms'][0]['connections'].reduce(function (connectionsString, currConn) {
+                    if (connectionsString !== undefined && !connectionsString.length)
                         return curr['connections'][0];
                     if (!currConn)
                         return connectionsString;
                     return connectionsString + ', ' + currConn;
-                }) + '\n';
+                });
             }
             else
+                currConnections = "";
+            let connForFirstRoom;
+            if (curr['connections'] !== undefined && curr['connections'].length) {
+                connForFirstRoom = curr['name'] + ' :' + curr['connections'].reduce(function (connectionString, currConn) {
+                    if (connectionString !== undefined && !connectionString.length)
+                        return curr['connections'][0];
+                    if (!currConn)
+                        return connectionString;
+                    return connectionString + ', ' + currConn;
+                }) + '\n';
+            } else
                 connForFirstRoom = curr['name'] + ' :' + "no connections\n";
             return info['rooms'][0]['name'] + ': ' + currConnections + '\n' + connForFirstRoom;
         } else {
-            if (curr['connections'].length) {
-                let currConnections = curr['connections'].reduce(function(connectionsString, currConn) {
-                    if (!connectionsString.length)
+            if (curr['connections'] !== undefined && curr['connections'].length) {
+                let currConnections = curr['connections'].reduce(function (connectionsString, currConn) {
+                    if (connectionsString !== undefined && !connectionsString.length)
                         return curr['connections'][0];
                     return connectionsString + ', ' + currConn;
                 });
@@ -166,35 +155,49 @@ function fillInfo(info) {
 
     })
     roomsConnections.innerText = 'Rooms connections:\n' + generatedConn;
-
-    let generatedPaths = info['ants'].reduce(function(string, curr, index, array) {
-        let firstString;
-        if (!string.length) {
-            firstString = 'L1: ' + info['ants'][0]['path'].reduce(function(connectionsString, currConn) {
-                if (!connectionsString.length)
-                    return info['ants'][0]['path'][0];
-                if (!currConn)
-                    return connectionsString;
-                return connectionsString + '--> ' + currConn;
-            }) + '\n';
-        }
-        let currConnections = curr['path'].reduce(function(connectionsString, currConn, index) {
-            if (!connectionsString) {
-                if (curr['path'][index])
-                    return curr['path'][index];
+    if(info['ants'])
+    {
+        let generatedPaths = info['ants'].reduce(function (string, curr, index) {
+            let firstString;
+            if (!string.length) {
+                if(info['ants'][0]['path'])
+                {
+                    firstString = 'L1: ' + info['ants'][0]['path'].reduce(function (connectionsString, currConn) {
+                        if (!connectionsString.length)
+                            return info['ants'][0]['path'][0];
+                        if (!currConn)
+                            return connectionsString;
+                        return connectionsString + '--> ' + currConn;
+                    }) + '\n';
+                }
                 else
-                    return connectionsString;
+                    firstString = 'L1: no path\n'
             }
-            if (currConn) {
-                if (connectionsString.length)
-                    return connectionsString + '--> ' + currConn;
-                else return currConn;
-            } else
-                return connectionsString
-        });
-        if (index === 1)
-            return firstString + ('L' + curr['number'] + ': ' + currConnections + '\n');
-        return string + ('L' + curr['number'] + ': ' + currConnections + '\n');
-    })
-    antsPaths.innerText = 'Ants paths:\n' + generatedPaths;
+            let currConnections;
+            if(curr['path'])
+            {
+                currConnections = curr['path'].reduce(function (connectionsString, currConn, index) {
+                    if (!connectionsString) {
+                        if (curr['path'][index])
+                            return curr['path'][index];
+                        else
+                            return connectionsString;
+                    }
+                    if (currConn) {
+                        if (connectionsString.length)
+                            return connectionsString + '--> ' + currConn;
+                        else return currConn;
+                    } else
+                        return connectionsString
+                });
+            }
+            else
+                currConnections ='no path';
+            if (index === 1)
+                return firstString + ('L' + curr['number'] + ': ' + currConnections + '\n');
+            return string + ('L' + curr['number'] + ': ' + currConnections + '\n');
+        })
+
+        antsPaths.innerText = 'Ants paths:\n' + generatedPaths;
+    }
 }

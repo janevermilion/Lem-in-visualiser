@@ -112,6 +112,7 @@ function findMainIndexes(arr) {
 function parseInfo(text)
 {
    // let splitted_info = text.split('\r\n');//for Win
+    //let splitted_info = text.replace('\r\n', '\n').text.split('\n');
     let splitted_info = text.split('\n');
     if (splitted_info[0] === 'ERROR')
         throw new Error('File is not valid.\nError description: ' + splitted_info[1]);
@@ -143,6 +144,11 @@ function parseInfo(text)
     {
         ants.push(new Ant(i, splitted_info.slice(Indexes['solution'], splitted_info.length - 1)));
     }
+    ants = ants.map(function (ant) {
+        if(ant['path'].length === 0)
+            ant['path'] = null;
+        return ant;
+    })
     info['ants'] = ants;
     draw(info);
 }
