@@ -27,10 +27,11 @@ function is_overlap(arr) {
         else
             return false;
     })
+    let maxAndMinRoomValues = returnMaxAndMinArrayValues(arr);
+    let bestScreenWidth = maxAndMinRoomValues.maxx * (roomSize + 2);
+    let bestScreenHeight = maxAndMinRoomValues.maxy * (roomSize + 2);
     if (isOverlap === true) {
-        let maxAndMinRoomValues = returnMaxAndMinArrayValues(arr);
-        let bestScreenWidth = maxAndMinRoomValues.maxx * (roomSize + 2);
-        let bestScreenHeight = maxAndMinRoomValues.maxy * (roomSize + 2);
+
         if (bestScreenWidth > screenWidth) {
             screenWidth = bestScreenWidth;
             container.style.width = screenWidth;
@@ -39,50 +40,7 @@ function is_overlap(arr) {
             screenHeight = bestScreenHeight;
             container.style.height = screenHeight;
         }
-
     }
-}
-
-function is_too_big(arr) {
-
-    let isOverlap = arr.some(function(room) {
-        if (room['x'] * roomSize > screenWidth + roomSize)
-            return true;
-        else if (room['y'] * roomSize > screenHeight + roomSize)
-            return true;
-        else
-            return false;
-    })
-    if (isOverlap === true) {
-        let maxAndMinRoomValues;
-
-        maxAndMinRoomValues = returnMaxAndMinArrayValues(arr);
-        let maxX = maxAndMinRoomValues.maxx;
-        let maxY = maxAndMinRoomValues.maxy;
-        let delimY = 0;
-        let delimX = 0;
-
-
-        while (maxX > parseInt(screenWidth) / roomSize) {
-            maxX /= 10;
-            delimX++;
-        }
-        while (maxY > parseInt(screenHeight) / roomSize) {
-            maxY /= 10;
-            delimY++;
-        }
-        if (delimX > 1 || delimY > 1) {
-
-            let maxDelim = delimX >= delimY ? delimX + 1 : delimY + 1;
-            arr = arr.map(function(room) {
-                room['x'] = Math.floor(parseInt(room['x']) / (maxDelim * 10));
-                room['y'] = Math.floor(parseInt(room['y']) / (maxDelim * 10));
-                return room;
-
-            });
-        }
-    }
-    return arr;
 }
 
 function changeInfo(info) {
@@ -93,7 +51,6 @@ function changeInfo(info) {
         room['x'] = Math.floor(parseInt(room['x']) - maxAndMinRoomValues.minx + 1);
         room['y'] = Math.floor(parseInt(room['y']) - maxAndMinRoomValues.miny + 1);
         return room;
-
     });
     is_overlap(info['rooms']);
     return info;
@@ -121,7 +78,12 @@ function fillInfo(info) {
             {
                 currConnections = info['rooms'][0]['connections'].reduce(function (connectionsString, currConn) {
                     if (connectionsString !== undefined && !connectionsString.length)
-                        return curr['connections'][0];
+                    {
+                        if (curr['connections'][0] != null)
+                            return curr['connections'][0];
+                        else
+                            return "";
+                    }
                     if (!currConn)
                         return connectionsString;
                     return connectionsString + ', ' + currConn;

@@ -112,7 +112,6 @@ function findMainIndexes(arr) {
 function parseInfo(text)
 {
    // let splitted_info = text.split('\r\n');//for Win
-    //let splitted_info = text.replace('\r\n', '\n').text.split('\n');
     let splitted_info = text.split('\n');
     if (splitted_info[0] === 'ERROR')
         throw new Error('File is not valid.\nError description: ' + splitted_info[1]);
@@ -171,7 +170,9 @@ function parseInfo(text)
                 errorHeader.innerText = error.toString() + '\nPlease, start the web-server.'
             if (error.toString() === "TypeError: Reduce of empty array with no initial value")
                 errorHeader.innerText = 'File to parse is not found.'
-            container.append(errorHeader);
+
+            document.querySelector('body').append(errorHeader);
+            container.style.display = "none";
             document.querySelector('.info_about').style.display = 'none';
             document.querySelector('.buttons-container').style.display = 'none';
         })

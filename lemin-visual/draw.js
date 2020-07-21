@@ -9,7 +9,6 @@ function drawRooms(info, scale) {
     roomContainer.style.zIndex = '10';
     for (var i = 0; i < info['rooms'].length; i++) {
         let curr = info['rooms'][i];
-        console.log(curr);
         if(curr['x'] != null && curr['x'] !== undefined && !isNaN(curr['x']) && curr['y'] != null && curr['y'] !== undefined && !isNaN(curr['y']))
         {
             let room = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
@@ -21,8 +20,8 @@ function drawRooms(info, scale) {
             room.setAttributeNS(null, 'rx', roomSize * scale/5 + 'px');
             room.setAttributeNS(null, 'width', roomSize * scale + 'px');
             room.setAttributeNS(null, 'height', roomSize * scale + 'px');
-            room.setAttributeNS(null, 'fill', '#b6155b');
-            let name = curr['type'] !== null ? curr['type'] : curr['name'];
+            room.setAttributeNS(null, 'fill', "#" + ((1 << 24) * Math.random() | 0).toString(16));
+            let name = curr['type'] !== null ? curr['name'] + ' (' +curr['type'] + ')' : curr['name'];
             var txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             txt.innerHTML = name;
             txt.setAttributeNS(null, 'fill', '#2d00b6');
@@ -259,9 +258,27 @@ function hangScaleListeners(info, scale, speed) {
     })
 }
 
+function changeScreenSize(info) {
+    let maxAndMinRoomValues = returnMaxAndMinArrayValues(info['rooms']);
+    let bestScreenWidth = (maxAndMinRoomValues.maxx +2)* (roomSize);
+    let bestScreenHeight = (maxAndMinRoomValues.maxy +2)* (roomSize);
+
+    if (bestScreenWidth < screenWidth) {
+        screenWidth = bestScreenWidth;
+        container.style.width = screenWidth;
+    }
+    if (bestScreenHeight < screenHeight) {
+        screenHeight = bestScreenHeight;
+        container.style.height = screenHeight;
+    }
+}
+
 function draw(info) {
     let scale = 1;
     let speed = 500;
+
+    console.log(info);
+    changeScreenSize(info);
     info = changeInfo(info);
     drawRooms(info, scale);
     drawConnections(info, scale);

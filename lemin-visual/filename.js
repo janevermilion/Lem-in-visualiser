@@ -1,1 +1,1 @@
-let fileName = 'result.txt';
+let fileName = 'maps/holygraph';
