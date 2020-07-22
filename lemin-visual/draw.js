@@ -144,7 +144,7 @@ function putAntsInStartRoom(info, scale) {
     })
 }
 
-function animateAnts(info, duration) {
+function animateAnts(info, duration,scale) {
     let animArr = [];
     info['ants'].forEach(function(antt, index, array) {
         let ant = document.getElementById('L' + info['ants'][index]['number']);
@@ -167,8 +167,8 @@ function animateAnts(info, duration) {
                 if (path[i]) {
                     let room = path[i];
                     let r = document.getElementById(room);
-                    x2 = parseInt(r.getAttribute('x')) - widthOfGhost / 2 + roomSize / 2;
-                    y2 = parseInt(r.getAttribute('y')) - widthOfGhost / 2 + roomSize / 2;
+                    x2 = parseInt(r.getAttribute('x')) - widthOfGhost *scale / 2 + roomSize / 2 *scale;
+                    y2 = parseInt(r.getAttribute('y')) - widthOfGhost / 2 *scale + roomSize / 2 *scale;
                     let deltaX = parseInt(x2) - parseInt(x1);
                     let deltaY = parseInt(y2) - parseInt(y1);
                     animation.add({
@@ -234,18 +234,18 @@ function hangScaleListeners(info, scale, speed) {
         container.removeChild(document.getElementById('ants'));
         putAntsInStartRoom(info, scale);
         fillInfo(info);
-        let animArr = animateAnts(info, speed);
+        let animArr = animateAnts(info, speed,scale);
         hangAnimationListeners(animArr);
 
     }
 
     scalePlus.addEventListener('click', function() {
-        scale += 0.5;
+        scale += 0.1;
         calculateAll(null)
     });
     scaleMinus.addEventListener('click', function() {
-        if(scale - 0.5 > 0)
-            scale -= 0.5;
+        if(scale - 0.1 > 0)
+            scale -= 0.1;
         calculateAll(null)
     });
     speedPlus.addEventListener('click',function () {
@@ -283,8 +283,8 @@ function draw(info) {
     drawRooms(info, scale);
     drawConnections(info, scale);
     putAntsInStartRoom(info, scale);
-    fillInfo(info);
-    let animArr = animateAnts(info, speed);
+   fillInfo(info);
+    let animArr = animateAnts(info, speed,scale);
     hangAnimationListeners(animArr);
     hangScaleListeners(info,scale, speed);
 }

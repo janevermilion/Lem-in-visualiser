@@ -65,6 +65,8 @@ function Ant(number, info) {
 }
 
 function createConnections(info, rooms, indexes) {
+    if(indexes['solution'] === 0)
+        indexes['solution'] = info.length;
   for(var i = indexes['paths']; i < indexes['solution'];i++)
     {
         let conn1 = info[i].split('-')[0];
@@ -111,8 +113,8 @@ function findMainIndexes(arr) {
 
 function parseInfo(text)
 {
-   // let splitted_info = text.split('\r\n');//for Win
-    let splitted_info = text.split('\n');
+    let splitted_info = text.split('\r\n');//for Win
+   // let splitted_info = text.split('\n');
     if (splitted_info[0] === 'ERROR')
         throw new Error('File is not valid.\nError description: ' + splitted_info[1]);
     else if (splitted_info[0] === '<!DOCTYPE html>')

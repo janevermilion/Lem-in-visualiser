@@ -18,6 +18,48 @@ function returnMaxAndMinArrayValues(arr) {
     return resultArr;
 }
 
+function is_too_big(arr) {
+
+    let isOverlap = arr.some(function(room) {
+        if (room['x'] * roomSize > screenWidth + roomSize)
+            return true;
+        else if (room['y'] * roomSize > screenHeight + roomSize)
+            return true;
+        else
+            return false;
+    })
+    if (isOverlap === true) {
+        let maxAndMinRoomValues;
+
+        maxAndMinRoomValues = returnMaxAndMinArrayValues(arr);
+        let maxX = maxAndMinRoomValues.maxx;
+        let maxY = maxAndMinRoomValues.maxy;
+        let delimY = 0;
+        let delimX = 0;
+
+
+        while (maxX > parseInt(screenWidth) / roomSize) {
+            maxX /= 10;
+            delimX++;
+        }
+        while (maxY > parseInt(screenHeight) / roomSize) {
+            maxY /= 10;
+            delimY++;
+        }
+        if (delimX > 1 || delimY > 1) {
+
+            let maxDelim = delimX >= delimY ? delimX + 1 : delimY + 1;
+            arr = arr.map(function(room) {
+                room['x'] = Math.floor(parseInt(room['x']) / (maxDelim * 10));
+                room['y'] = Math.floor(parseInt(room['y']) / (maxDelim * 10));
+                return room;
+
+            });
+        }
+    }
+    return arr;
+}
+
 function is_overlap(arr) {
     let isOverlap = arr.some(function(room) {
         if (room['x'] * roomSize > screenWidth + roomSize)
@@ -52,7 +94,9 @@ function changeInfo(info) {
         room['y'] = Math.floor(parseInt(room['y']) - maxAndMinRoomValues.miny + 1);
         return room;
     });
+    is_too_big(info['rooms']);
     is_overlap(info['rooms']);
+
     return info;
 }
 
@@ -61,20 +105,20 @@ function fillInfo(info) {
     let roomList = document.getElementById('rooms-list');
     let roomsConnections = document.getElementById('rooms-connections');
     let antsPaths = document.getElementById('ants-paths');
-    ants.innerText = 'Ants: ' + info['quant_of_ants'];
+    ants.innerHTML = '<b class="inner-info-header">Ants:</b><div class="inner-info">' + info['quant_of_ants'] + '</div>';
 
     let generatedRooms = info['rooms'].reduce(function (string, curr) {
         if (!string.length)
             return info['rooms'][0]['name'] + ', ' + curr['name'];
         return string + ', ' + curr['name']
     });
-    roomList.innerText = 'Rooms: \n' + generatedRooms;
+    roomList.innerHTML = '<b class="inner-info-header">Rooms:</b><br><div class="inner-info">' + generatedRooms + '</div>';
 
 
     let generatedConn = info['rooms'].reduce(function (string, curr) {
         if (!string.length) {
             let currConnections;
-            if(info['rooms'][0]['connections'] !== null)
+            if(info['rooms'][0]['connections'] !== null && info['rooms'][0]['connections'].length)
             {
                 currConnections = info['rooms'][0]['connections'].reduce(function (connectionsString, currConn) {
                     if (connectionsString !== undefined && !connectionsString.length)
@@ -101,8 +145,8 @@ function fillInfo(info) {
                     return connectionString + ', ' + currConn;
                 }) + '\n';
             } else
-                connForFirstRoom = curr['name'] + ' :' + "no connections\n";
-            return info['rooms'][0]['name'] + ': ' + currConnections + '\n' + connForFirstRoom;
+                connForFirstRoom = '<b>'+curr['name']+'</b>' + ' :' + "no connections<br>";
+            return '<b>' + info['rooms'][0]['name'] + '</b>' + ': ' + currConnections + '<br>' + connForFirstRoom;
         } else {
             if (curr['connections'] !== undefined && curr['connections'].length) {
                 let currConnections = curr['connections'].reduce(function (connectionsString, currConn) {
@@ -110,30 +154,30 @@ function fillInfo(info) {
                         return curr['connections'][0];
                     return connectionsString + ', ' + currConn;
                 });
-                return string + (curr['name'] + ': ' + currConnections + '\n');
+                return string + ('<b>'+curr['name']+'</b>' + ': ' + currConnections + '<br>');
             } else
-                return string + (curr['name'] + ': ' + 'no connections' + '\n');
+                return string + ('<b>'+curr['name']+'</b>' + ': ' + 'no connections' + '<br>');
         }
 
     })
-    roomsConnections.innerText = 'Rooms connections:\n' + generatedConn;
+    roomsConnections.innerHTML = '<b>Rooms connections:\n</b><div class="inner-info">' + generatedConn + '</div>';
     if(info['ants'])
     {
         let generatedPaths = info['ants'].reduce(function (string, curr, index) {
             let firstString;
             if (!string.length) {
-                if(info['ants'][0]['path'])
+                if(info['ants'][0]['path'] != null && info['ants'][0]['path'].length)
                 {
-                    firstString = 'L1: ' + info['ants'][0]['path'].reduce(function (connectionsString, currConn) {
+                    firstString = '<b>L1: </b>' + info['ants'][0]['path'].reduce(function (connectionsString, currConn) {
                         if (!connectionsString.length)
                             return info['ants'][0]['path'][0];
                         if (!currConn)
                             return connectionsString;
                         return connectionsString + '--> ' + currConn;
-                    }) + '\n';
+                    }) + '<br>';
                 }
                 else
-                    firstString = 'L1: no path\n'
+                    firstString = '<b>L1: </b>no path' + '<br>';
             }
             let currConnections;
             if(curr['path'])
@@ -156,10 +200,10 @@ function fillInfo(info) {
             else
                 currConnections ='no path';
             if (index === 1)
-                return firstString + ('L' + curr['number'] + ': ' + currConnections + '\n');
-            return string + ('L' + curr['number'] + ': ' + currConnections + '\n');
+                return firstString + ('<b>L' + curr['number'] + ': </b>' + currConnections + '<br>');
+            return string + ('<b>L' + curr['number'] + ': </b>' + currConnections + '<br>');
         })
 
-        antsPaths.innerText = 'Ants paths:\n' + generatedPaths;
+        antsPaths.innerHTML = '<b class="inner-info-header">Ants paths:\n</b><div class="inner-info">' + generatedPaths +'</div>';
     }
 }

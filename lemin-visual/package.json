@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "node visualiser.js maps/1K.map",
+    "test": "node visualiser.js maps/holygraph",
     "vis": "node visualiser.js"
   },
   "author": "",

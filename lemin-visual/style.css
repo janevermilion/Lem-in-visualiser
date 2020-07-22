@@ -1,3 +1,7 @@
+body
+{
+    font-family: 'Ubuntu', sans-serif;
+}
 .lemin-container
 {
     width: 1024px;
@@ -5,7 +9,6 @@
     padding: 50px 0;
     margin: 0 auto;
     margin-top: 50px;
-  /*  background-color: rgba(30, 224, 9, 0.16);*/
     position: relative;
 }
 .buttons-container
@@ -13,8 +16,8 @@
     z-index: 30;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    max-width: 735px;
+    justify-content: center;
+
 }
 .button
 {
@@ -23,12 +26,19 @@
     font-size: 15px;
     background-color: #328e59;
     border-radius: 20px;
-    font-family: Broadway, sans-serif;
     font-weight: bold;
     color: whitesmoke;
     border: none;
     margin: 5px;
     cursor: pointer;
+    min-width: 100px;
+    box-shadow: -1px 1px 5px 1px rgba(26,113,65,1);
+
+}
+.button:hover
+{
+    background-color: #1a7141;
+    box-shadow: -1px 1px 5px 1px #1a7141;
 }
 .buttons-container button:nth-child(3),.buttons-container button:nth-child(5)
 {
@@ -38,21 +48,30 @@
 .room
 {
     cursor: pointer;
- /*   width: 50px;
-    height: 50px;*/
     position: absolute;
     text-align: center;
     color: white;
 }
 .start-room, .end-room
 {
- /*   width: 100px;
-    height: 100px;*/
     background-color: red;
 }
 .error-header
 {
     text-align: center;
-    font-family: Broadway, sans-serif;
 }
-
+.info_about{
+    margin:20px
+}
+.info-header
+{
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+.inner-info
+{
+    padding-left: 10px;
+    padding-top: 5px;
+}
