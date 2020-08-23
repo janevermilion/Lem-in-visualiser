@@ -85,7 +85,7 @@ void	calculate_needed_size(char **data, int i, t_parsed_room **rooms_array,
 	if (needed_size)
 	{
 		ind = calculate_ind(data[i], rooms_array);
-		if (ind)
+		if (ind >= 0)//////////////////////////////////////////////
 			create_connections_for_this_room(rooms_array[ind], 
 			indexes->paths, data, needed_size);
 	}
@@ -104,6 +104,8 @@ void	fill_connections_for_rooms(int i, t_parsed_room **rooms_array,
 	{
 		if (data[i][0] != '#')
 		{
+		    if(i == 9)
+		        printf("HERER");
 			trimed = ft_strtrim(data[i]);
 			splited_line = ft_strsplit(trimed, '-');
 			len = ft_arraylen((void **)splited_line);
