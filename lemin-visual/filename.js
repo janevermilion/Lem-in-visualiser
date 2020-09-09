@@ -1,1 +1,1 @@
-let fileName = 'maps/test1';
+let fileName = 'result.txt';
